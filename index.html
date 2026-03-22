@@ -1930,6 +1930,21 @@
       }
 
       // Success — show confirmation
+            const formData = {
+        fullName: document.getElementById('fullName').value.trim(),
+        surnamePaterno: document.getElementById('surnamePaterno').value.trim(),
+        lastNameMaterno: document.getElementById('lastNameMaterno').value.trim(),
+        title: document.getElementById('title').value.trim(),
+        company: document.getElementById('company').value.trim(),
+        email: document.getElementById('email').value.trim(),
+        sector: document.getElementById('sector').value,
+        program: 'The Human Advantage'
+      };
+      fetch('https://allanbarush.app.n8n.cloud/webhook/landing-page-lead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      }).catch(err => console.error('Webhook error:', err));
       form.style.display = 'none';
       formSuccess.classList.add('visible');
 
