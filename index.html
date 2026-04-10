@@ -1356,7 +1356,8 @@
   <nav class="nav" id="nav">
     <div class="container nav-inner">
       <a href="#" class="nav-brand">RiskMathics <span>Financial Innovation Lab</span></a>
-      <a href="#register" class="nav-cta">Register Now</a>
+      <a href="#register" class="nav-cta-outline" style="margin-right:8px;padding:10px 20px;border:1px solid rgba(255,255,255,0.3);border-radius:4px;color:#fff;text-decoration:none;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;transition:all 0.2s">Más Información</a>
+      <a href="#inscribirse" class="nav-cta" style="background:linear-gradient(135deg,#c9a84c,#e8d5a0);color:#0a0a0a;padding:10px 20px;border-radius:4px;text-decoration:none;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase">Inscribirme →</a>
     </div>
   </nav>
 
@@ -1770,7 +1771,7 @@
               Post-program faculty access
             </li>
           </ul>
-          <a href="#register" class="pricing-btn pricing-btn-primary">Enroll Now</a>
+          <a href="#inscribirse" class="pricing-btn pricing-btn-primary" onclick="openInscripcionModal('HFMEMBER','The Human Advantage','individual')">Inscribirme →</a>
         </div>
         <div class="pricing-card reveal">
           <div class="pricing-badge" style="background: var(--blue-glow); color: var(--blue);">Request Info</div>
@@ -1800,7 +1801,7 @@
               Executive coaching sessions
             </li>
           </ul>
-          <a href="mailto:executive@riskmathics.com?subject=More Information%20Inquiry%20%E2%80%93%20The%20Human%20Advantage&body=I%20would%20like%20to%20request%20more%20information%20about%20The%20Human%20Advantage%20More Information%20program%20for%20my%20organization.%0A%0ACompany%3A%20%0AName%3A%20%0ARole%3A%20%0ANumber%20of%20participants%3A%20%0A%0AThank%20you." class="pricing-btn pricing-btn-secondary">Request More Info</a>
+          <a href="#register" class="pricing-btn" onclick="openInfoModal()">Más Información</a>
         </div>
       </div>
     </div>
@@ -1809,76 +1810,256 @@
   <!-- ═══════════════════════════════════════════════════════
        REGISTRATION FORM
        ═══════════════════════════════════════════════════════ -->
-  <section class="registration" id="register">
-    <div class="container">
-      <div class="registration-header reveal">
-        <p class="section-label">Secure Your Place</p>
-        <h2 class="section-title">Register for The Human Advantage</h2>
-        <div class="divider" style="margin: 24px auto;"></div>
-        <p class="section-desc">Complete the form below and our executive programs team will contact you within 24 business hours to confirm your enrollment.</p>
+<section class="registration" id="register" style="padding:100px 0;background:#080808">
+  <div class="container" style="max-width:900px;margin:0 auto;padding:0 40px;text-align:center">
+    
+    <!-- Dual CTA -->
+    <p class="section-label" style="font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:#c9a84c;margin-bottom:16px">Únete al Programa</p>
+    <h2 style="font-size:42px;font-weight:300;color:#fff;margin-bottom:16px;letter-spacing:-0.02em">¿Cómo quieres comenzar?</h2>
+    <p style="font-size:16px;color:#888;margin-bottom:56px">Elige la opción que mejor se adapte a tu momento.</p>
+    
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:720px;margin:0 auto 80px">
+      
+      <!-- CTA 1: Más Información -->
+      <div onclick="openInfoModal()" style="cursor:pointer;border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:40px 32px;background:rgba(255,255,255,0.03);backdrop-filter:blur(20px);transition:all 0.3s;text-align:left" onmouseover="this.style.borderColor='rgba(201,168,76,0.4)';this.style.background='rgba(201,168,76,0.05)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.1)';this.style.background='rgba(255,255,255,0.03)'">
+        <div style="font-size:28px;margin-bottom:16px">📄</div>
+        <h3 style="font-size:20px;font-weight:600;color:#fff;margin-bottom:8px">Quiero más información</h3>
+        <p style="font-size:14px;color:#888;line-height:1.6;margin-bottom:24px">Te contactamos en menos de 24 horas con el temario completo, fechas y opciones de pago.</p>
+        <span style="display:inline-block;border:1px solid #c9a84c;color:#c9a84c;padding:10px 20px;border-radius:6px;font-size:12px;font-weight:600;letter-spacing:0.05em;text-transform:uppercase">Solicitar información →</span>
       </div>
-      <div class="form-wrapper reveal">
-        <form id="registrationForm" novalidate>
-          <div class="form-error-banner" id="formErrorBanner">There was an error submitting your registration. Please try again.</div>
-          <div class="form-group">
-            <label class="form-label" for="fullName">Full Name <span class="required">*</span></label>
-            <input type="text" id="fullName" name="fullName" class="form-input" placeholder="First name(s)" required>
-            <div class="form-error" id="fullNameError">Please enter your full name.</div>
-          </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label class="form-label" for="surnamePaterno">Surname Paterno <span class="required">*</span></label>
-              <input type="text" id="surnamePaterno" name="surnamePaterno" class="form-input" placeholder="Apellido paterno" required>
-              <div class="form-error" id="surnamePaternoError">Please enter your paternal surname.</div>
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="lastNameMaterno">Last Name Materno <span class="required">*</span></label>
-              <input type="text" id="lastNameMaterno" name="lastNameMaterno" class="form-input" placeholder="Apellido materno" required>
-              <div class="form-error" id="lastNameMaternoError">Please enter your maternal last name.</div>
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label class="form-label" for="title">Title / Position <span class="required">*</span></label>
-              <input type="text" id="title" name="title" class="form-input" placeholder="e.g., Chief Technology Officer" required>
-              <div class="form-error" id="titleError">Please enter your title or position.</div>
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="company">Company <span class="required">*</span></label>
-              <input type="text" id="company" name="company" class="form-input" placeholder="Organization name" required>
-              <div class="form-error" id="companyError">Please enter your company name.</div>
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="email">Business Email <span class="required">*</span></label>
-            <input type="email" id="email" name="email" class="form-input" placeholder="name@company.com" required>
-            <div class="form-error" id="emailError">Please enter a valid business email address.</div>
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="sector">Sector <span class="required">*</span></label>
-            <select id="sector" name="sector" class="form-select" required>
-              <option value="" disabled selected>Select your sector</option>
-              <option value="Corporativo">Corporativo</option>
-              <option value="Seguros">Seguros</option>
-              <option value="Broker Dealer">Broker Dealer</option>
-              <option value="Hedge Fund">Hedge Fund</option>
-              <option value="FCM">FCM</option>
-              <option value="Banking">Banking</option>
-              <option value="Pension">Pension</option>
-            </select>
-            <div class="form-error" id="sectorError">Please select your sector.</div>
-          </div>
-          <button type="submit" class="form-submit" id="submitBtn">Submit Registration</button>
-          <p class="form-disclaimer">By submitting this form, you agree to be contacted by RiskMathics Financial Innovation Lab regarding The Human Advantage program. Your information will be treated with strict confidentiality.</p>
-        </form>
-        <div class="form-success" id="formSuccess">
-          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
-          <h3>Registration Received</h3>
-          <p>Thank you for your interest in The Human Advantage. Our executive programs team will contact you within 24 business hours.</p>
+      
+      <!-- CTA 2: Inscribirme -->
+      <div id="inscribirse" onclick="openInscripcionModal('HFMEMBER','The Human Advantage')" style="cursor:pointer;border:1px solid rgba(201,168,76,0.4);border-radius:12px;padding:40px 32px;background:rgba(201,168,76,0.08);backdrop-filter:blur(20px);transition:all 0.3s;text-align:left;position:relative" onmouseover="this.style.background='rgba(201,168,76,0.14)'" onmouseout="this.style.background='rgba(201,168,76,0.08)'">
+        <div style="position:absolute;top:16px;right:16px;background:#c9a84c;color:#0a0a0a;font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:4px 10px;border-radius:20px">Recomendado</div>
+        <div style="font-size:28px;margin-bottom:16px">🎓</div>
+        <h3 style="font-size:20px;font-weight:600;color:#fff;margin-bottom:8px">Quiero inscribirme</h3>
+        <p style="font-size:14px;color:#888;line-height:1.6;margin-bottom:24px">Llena tus datos, elige tu formato, paga y recibe tu confirmación y acceso inmediatamente.</p>
+        <span style="display:inline-block;background:linear-gradient(135deg,#c9a84c,#e8d5a0);color:#0a0a0a;padding:10px 20px;border-radius:6px;font-size:12px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase">Inscribirme ahora →</span>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+<!-- MODAL: Más Información (Grial Form) -->
+<div id="modal-info" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.85);backdrop-filter:blur(8px);overflow-y:auto">
+  <div style="max-width:560px;margin:60px auto;background:#111;border:1px solid rgba(201,168,76,0.2);border-radius:16px;padding:48px;position:relative">
+    <button onclick="closeModal('modal-info')" style="position:absolute;top:20px;right:20px;background:none;border:none;color:#888;font-size:24px;cursor:pointer;line-height:1">×</button>
+    <div style="color:#c9a84c;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:8px">Solicitar Información</div>
+    <h3 style="font-size:24px;font-weight:600;color:#fff;margin-bottom:8px">The Human Advantage</h3>
+    <p style="font-size:14px;color:#888;margin-bottom:32px">Te respondemos en menos de 24 horas hábiles.</p>
+    
+    <form id="grial-info-form" onsubmit="submitInfoForm(event)">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px">
+        <div>
+          <label style="display:block;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#666;margin-bottom:8px">Nombre *</label>
+          <input type="text" id="info-firstname" required style="width:100%;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:12px 16px;color:#fff;font-size:14px;box-sizing:border-box;outline:none" placeholder="Tu nombre">
+        </div>
+        <div>
+          <label style="display:block;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#666;margin-bottom:8px">Apellido *</label>
+          <input type="text" id="info-lastname" required style="width:100%;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:12px 16px;color:#fff;font-size:14px;box-sizing:border-box;outline:none" placeholder="Tu apellido">
         </div>
       </div>
+      <div style="margin-bottom:16px">
+        <label style="display:block;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#666;margin-bottom:8px">Email Corporativo *</label>
+        <input type="email" id="info-email" required style="width:100%;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:12px 16px;color:#fff;font-size:14px;box-sizing:border-box;outline:none" placeholder="nombre@empresa.com">
+        <p style="font-size:11px;color:#555;margin-top:4px">No se aceptan Gmail, Hotmail ni similares.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px">
+        <div>
+          <label style="display:block;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#666;margin-bottom:8px">Cargo *</label>
+          <input type="text" id="info-jobtitle" required style="width:100%;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:12px 16px;color:#fff;font-size:14px;box-sizing:border-box;outline:none" placeholder="Tu cargo">
+        </div>
+        <div>
+          <label style="display:block;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#666;margin-bottom:8px">Empresa *</label>
+          <input type="text" id="info-company" required style="width:100%;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:12px 16px;color:#fff;font-size:14px;box-sizing:border-box;outline:none" placeholder="Tu empresa">
+        </div>
+      </div>
+      <div style="margin-bottom:24px">
+        <label style="display:block;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#666;margin-bottom:8px">Teléfono / WhatsApp *</label>
+        <div style="display:flex;gap:8px">
+          <select id="info-phone-cc" style="width:100px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:12px;color:#fff;font-size:14px">
+            <option value="+52">🇲🇽 +52</option>
+            <option value="+1">🇺🇸 +1</option>
+            <option value="+57">🇨🇴 +57</option>
+            <option value="+56">🇨🇱 +56</option>
+            <option value="+51">🇵🇪 +51</option>
+            <option value="+54">🇦🇷 +54</option>
+            <option value="+55">🇧🇷 +55</option>
+          </select>
+          <input type="tel" id="info-phone" required style="flex:1;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:12px 16px;color:#fff;font-size:14px;outline:none" placeholder="55 1234 5678">
+        </div>
+      </div>
+      <div id="info-form-error" style="display:none;background:rgba(255,68,68,0.1);border:1px solid rgba(255,68,68,0.3);border-radius:8px;padding:12px;color:#ff6b6b;font-size:13px;margin-bottom:16px"></div>
+      <button type="submit" id="info-submit-btn" style="width:100%;background:linear-gradient(135deg,#c9a84c,#e8d5a0);color:#0a0a0a;border:none;border-radius:8px;padding:14px;font-size:14px;font-weight:700;cursor:pointer;letter-spacing:0.05em;text-transform:uppercase;transition:opacity 0.2s">Solicitar Información</button>
+    </form>
+    <div id="info-success" style="display:none;text-align:center;padding:40px 0">
+      <div style="font-size:48px;margin-bottom:16px">✅</div>
+      <h3 style="color:#fff;font-size:20px;margin-bottom:8px">¡Listo!</h3>
+      <p style="color:#888;font-size:15px">Te contactamos en menos de 24 horas hábiles.</p>
     </div>
-  </section>
+  </div>
+</div>
+
+<!-- MODAL: Inscripción con Pago -->
+<div id="modal-inscripcion" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.85);backdrop-filter:blur(8px);overflow-y:auto">
+  <div style="max-width:680px;margin:40px auto;background:#111;border:1px solid rgba(201,168,76,0.3);border-radius:16px;padding:48px;position:relative">
+    <button onclick="closeModal('modal-inscripcion')" style="position:absolute;top:20px;right:20px;background:none;border:none;color:#888;font-size:24px;cursor:pointer;line-height:1">×</button>
+    <div style="color:#c9a84c;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:8px">Inscripción</div>
+    <h3 style="font-size:24px;font-weight:600;color:#fff;margin-bottom:4px">The Human Advantage</h3>
+    <p style="font-size:14px;color:#888;margin-bottom:32px">Executive Program · Junio 2026</p>
+    
+    <!-- Step indicator -->
+    <div style="display:flex;gap:0;margin-bottom:40px">
+      <div class="step-indicator" id="step-ind-1" style="flex:1;text-align:center;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;padding-bottom:12px;border-bottom:2px solid #c9a84c;color:#c9a84c">1. Tus datos</div>
+      <div class="step-indicator" id="step-ind-2" style="flex:1;text-align:center;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;padding-bottom:12px;border-bottom:2px solid rgba(255,255,255,0.1);color:#555">2. Facturación</div>
+      <div class="step-indicator" id="step-ind-3" style="flex:1;text-align:center;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;padding-bottom:12px;border-bottom:2px solid rgba(255,255,255,0.1);color:#555">3. Pago</div>
+    </div>
+
+    <!-- STEP 1: Datos personales -->
+    <div id="inscripcion-step-1">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px">
+        <div>
+          <label style="display:block;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#666;margin-bottom:8px">Nombre *</label>
+          <input type="text" id="ins-firstname" style="width:100%;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:12px 16px;color:#fff;font-size:14px;box-sizing:border-box;outline:none" placeholder="Tu nombre">
+        </div>
+        <div>
+          <label style="display:block;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#666;margin-bottom:8px">Apellido *</label>
+          <input type="text" id="ins-lastname" style="width:100%;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:12px 16px;color:#fff;font-size:14px;box-sizing:border-box;outline:none" placeholder="Tu apellido">
+        </div>
+      </div>
+      <div style="margin-bottom:16px">
+        <label style="display:block;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#666;margin-bottom:8px">Email Corporativo *</label>
+        <input type="email" id="ins-email" style="width:100%;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:12px 16px;color:#fff;font-size:14px;box-sizing:border-box;outline:none" placeholder="nombre@empresa.com">
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px">
+        <div>
+          <label style="display:block;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#666;margin-bottom:8px">Cargo *</label>
+          <input type="text" id="ins-jobtitle" style="width:100%;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:12px 16px;color:#fff;font-size:14px;box-sizing:border-box;outline:none" placeholder="Cargo">
+        </div>
+        <div>
+          <label style="display:block;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#666;margin-bottom:8px">Empresa *</label>
+          <input type="text" id="ins-company" style="width:100%;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:12px 16px;color:#fff;font-size:14px;box-sizing:border-box;outline:none" placeholder="Tu empresa">
+        </div>
+      </div>
+      <div style="margin-bottom:16px">
+        <label style="display:block;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#666;margin-bottom:8px">Teléfono / WhatsApp *</label>
+        <div style="display:flex;gap:8px">
+          <select id="ins-phone-cc" style="width:110px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:12px;color:#fff;font-size:14px">
+            <option value="+52">🇲🇽 +52</option><option value="+1">🇺🇸 +1</option>
+            <option value="+57">🇨🇴 +57</option><option value="+56">🇨🇱 +56</option>
+            <option value="+51">🇵🇪 +51</option><option value="+54">🇦🇷 +54</option>
+            <option value="+55">🇧🇷 +55</option>
+          </select>
+          <input type="tel" id="ins-phone" style="flex:1;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:12px 16px;color:#fff;font-size:14px;outline:none" placeholder="55 1234 5678">
+        </div>
+      </div>
+      <div style="margin-bottom:24px">
+        <label style="display:block;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#666;margin-bottom:8px">País *</label>
+        <select id="ins-country" style="width:100%;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:12px 16px;color:#fff;font-size:14px">
+          <option value="MX">México</option><option value="CO">Colombia</option>
+          <option value="CL">Chile</option><option value="PE">Perú</option>
+          <option value="AR">Argentina</option><option value="BR">Brasil</option>
+          <option value="US">Estados Unidos</option><option value="GT">Guatemala</option>
+          <option value="PA">Panamá</option><option value="CR">Costa Rica</option>
+        </select>
+      </div>
+      <button onclick="goToStep(2)" style="width:100%;background:linear-gradient(135deg,#c9a84c,#e8d5a0);color:#0a0a0a;border:none;border-radius:8px;padding:14px;font-size:14px;font-weight:700;cursor:pointer;letter-spacing:0.05em;text-transform:uppercase">Continuar →</button>
+    </div>
+
+    <!-- STEP 2: Facturación -->
+    <div id="inscripcion-step-2" style="display:none">
+      <div style="margin-bottom:20px">
+        <label style="display:block;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#666;margin-bottom:12px">¿Requieres factura?</label>
+        <div style="display:flex;gap:12px">
+          <label style="flex:1;display:flex;align-items:center;gap:8px;cursor:pointer;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:12px;font-size:13px;color:#fff">
+            <input type="radio" name="invoice-type" value="none" checked style="accent-color:#c9a84c"> Sin factura
+          </label>
+          <label style="flex:1;display:flex;align-items:center;gap:8px;cursor:pointer;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:12px;font-size:13px;color:#fff">
+            <input type="radio" name="invoice-type" value="persona_fisica" style="accent-color:#c9a84c"> Persona Física
+          </label>
+          <label style="flex:1;display:flex;align-items:center;gap:8px;cursor:pointer;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:12px;font-size:13px;color:#fff">
+            <input type="radio" name="invoice-type" value="empresa" style="accent-color:#c9a84c"> Empresa
+          </label>
+        </div>
+      </div>
+      <div id="fiscal-fields" style="display:none">
+        <div style="margin-bottom:16px">
+          <label style="display:block;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#666;margin-bottom:8px" id="tax-id-label">RFC *</label>
+          <input type="text" id="ins-tax-id" style="width:100%;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:12px 16px;color:#fff;font-size:14px;box-sizing:border-box;outline:none" placeholder="RFC o Tax ID">
+        </div>
+        <div id="mx-fields">
+          <div style="margin-bottom:16px">
+            <label style="display:block;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#666;margin-bottom:8px">Régimen Fiscal</label>
+            <select id="ins-regime" style="width:100%;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:12px 16px;color:#fff;font-size:14px">
+              <option value="">Selecciona régimen...</option>
+              <option value="601">601 - General de Ley Personas Morales</option>
+              <option value="612">612 - Personas Físicas con Actividades Empresariales</option>
+              <option value="626">626 - Simplificado de Confianza</option>
+            </select>
+          </div>
+          <div style="margin-bottom:16px">
+            <label style="display:block;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#666;margin-bottom:8px">Uso CFDI</label>
+            <select id="ins-cfdi" style="width:100%;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:12px 16px;color:#fff;font-size:14px">
+              <option value="D10">D10 - Pagos por servicios educativos</option>
+              <option value="G03">G03 - Gastos en general</option>
+            </select>
+          </div>
+        </div>
+        <div style="margin-bottom:16px">
+          <label style="display:block;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#666;margin-bottom:8px">Email para factura</label>
+          <input type="email" id="ins-fiscal-email" style="width:100%;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:12px 16px;color:#fff;font-size:14px;box-sizing:border-box;outline:none" placeholder="facturacion@empresa.com">
+        </div>
+      </div>
+      <div style="display:flex;gap:12px;margin-top:8px">
+        <button onclick="goToStep(1)" style="flex:1;background:transparent;border:1px solid rgba(255,255,255,0.2);border-radius:8px;padding:14px;font-size:14px;color:#888;cursor:pointer">← Atrás</button>
+        <button onclick="goToStep(3)" style="flex:2;background:linear-gradient(135deg,#c9a84c,#e8d5a0);color:#0a0a0a;border:none;border-radius:8px;padding:14px;font-size:14px;font-weight:700;cursor:pointer">Continuar →</button>
+      </div>
+    </div>
+
+    <!-- STEP 3: Pago -->
+    <div id="inscripcion-step-3" style="display:none">
+      <div style="background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.2);border-radius:12px;padding:24px;margin-bottom:24px">
+        <div style="font-size:13px;color:#888;margin-bottom:4px">Resumen de inscripción</div>
+        <div style="font-size:20px;font-weight:600;color:#fff;margin-bottom:4px">The Human Advantage</div>
+        <div style="font-size:13px;color:#c9a84c">Executive Program · Junio 2026</div>
+        <div style="margin-top:16px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.08)">
+          <div id="ins-summary-name" style="font-size:14px;color:#aaa"></div>
+          <div id="ins-summary-email" style="font-size:13px;color:#666"></div>
+        </div>
+      </div>
+      
+      <div style="text-align:center;margin-bottom:32px">
+        <div style="font-size:13px;color:#888;margin-bottom:4px">Inversión</div>
+        <div style="font-size:42px;font-weight:300;color:#fff;letter-spacing:-0.02em">$<span id="ins-price">Consultar</span></div>
+        <div style="font-size:13px;color:#888" id="ins-currency">MXN</div>
+      </div>
+
+      <!-- PayPal button placeholder -->
+      <div id="paypal-button-container" style="margin-bottom:20px;min-height:50px;display:flex;align-items:center;justify-content:center">
+        <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:20px;text-align:center;width:100%">
+          <div style="color:#888;font-size:13px;margin-bottom:8px">💳 Pago seguro vía PayPal</div>
+          <button onclick="submitInscripcionWithPaypal()" style="background:#0070ba;color:#fff;border:none;border-radius:8px;padding:14px 32px;font-size:15px;font-weight:600;cursor:pointer;width:100%">Pagar con PayPal →</button>
+          <div style="font-size:11px;color:#555;margin-top:8px">Procesado 100% seguro · SSL · PayPal Verified</div>
+        </div>
+      </div>
+      
+      <div style="display:flex;gap:12px">
+        <button onclick="goToStep(2)" style="flex:1;background:transparent;border:1px solid rgba(255,255,255,0.2);border-radius:8px;padding:14px;font-size:14px;color:#888;cursor:pointer">← Atrás</button>
+      </div>
+    </div>
+
+    <!-- SUCCESS -->
+    <div id="inscripcion-success" style="display:none;text-align:center;padding:40px 0">
+      <div style="font-size:56px;margin-bottom:16px">🎓</div>
+      <h3 style="color:#fff;font-size:22px;margin-bottom:8px">¡Inscripción Confirmada!</h3>
+      <p style="color:#888;font-size:15px;line-height:1.6">Revisa tu email — recibirás la confirmación y los próximos pasos en los próximos minutos.</p>
+      <div style="margin-top:24px;padding:16px;background:rgba(201,168,76,0.08);border-radius:8px">
+        <div style="font-size:13px;color:#c9a84c">El equipo de Operaciones te contactará en las próximas 24 horas.</div>
+      </div>
+    </div>
+  </div>
+</div>
 
   <!-- ═══════════════════════════════════════════════════════
        FOOTER
@@ -2166,6 +2347,156 @@
       }
     });
   </script>
+
+<script>
+// ── MODAL FUNCTIONS ──────────────────────────────────────────────────────────
+function openInfoModal() {
+  document.getElementById('modal-info').style.display = 'block';
+  document.body.style.overflow = 'hidden';
+}
+function openInscripcionModal(programId, programName) {
+  document.getElementById('modal-inscripcion').style.display = 'block';
+  document.body.style.overflow = 'hidden';
+  updateSummary();
+}
+function closeModal(id) {
+  document.getElementById(id).style.display = 'none';
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    closeModal('modal-info');
+    closeModal('modal-inscripcion');
+  }
+});
+
+// ── STEP NAVIGATION ──────────────────────────────────────────────────────────
+function goToStep(step) {
+  [1,2,3].forEach(s => {
+    document.getElementById('inscripcion-step-' + s).style.display = s === step ? 'block' : 'none';
+    const ind = document.getElementById('step-ind-' + s);
+    if (ind) {
+      ind.style.borderBottomColor = s <= step ? '#c9a84c' : 'rgba(255,255,255,0.1)';
+      ind.style.color = s <= step ? '#c9a84c' : '#555';
+    }
+  });
+  if (step === 3) updateSummary();
+}
+function updateSummary() {
+  const name = (document.getElementById('ins-firstname')?.value || '') + ' ' + (document.getElementById('ins-lastname')?.value || '');
+  const email = document.getElementById('ins-email')?.value || '';
+  const el1 = document.getElementById('ins-summary-name');
+  const el2 = document.getElementById('ins-summary-email');
+  if (el1) el1.textContent = name.trim();
+  if (el2) el2.textContent = email;
+}
+
+// Invoice type toggling
+document.addEventListener('change', function(e) {
+  if (e.target.name === 'invoice-type') {
+    const fields = document.getElementById('fiscal-fields');
+    fields.style.display = e.target.value === 'none' ? 'none' : 'block';
+  }
+});
+
+// ── BLOCKED DOMAINS (info form) ──────────────────────────────────────────────
+const BLOCKED = ['gmail','yahoo','hotmail','outlook','live','icloud','proton','aol','yandex'];
+function isBlockedEmail(email) {
+  const domain = email.split('@')[1]?.split('.')[0]?.toLowerCase();
+  return BLOCKED.includes(domain);
+}
+
+// ── GRIAL — SUBMIT INFO FORM ─────────────────────────────────────────────────
+async function submitInfoForm(e) {
+  e.preventDefault();
+  const email = document.getElementById('info-email').value;
+  const errDiv = document.getElementById('info-form-error');
+  errDiv.style.display = 'none';
+  
+  if (isBlockedEmail(email)) {
+    errDiv.textContent = 'Por favor usa tu email corporativo. No aceptamos Gmail, Hotmail ni similares.';
+    errDiv.style.display = 'block';
+    return;
+  }
+  
+  const btn = document.getElementById('info-submit-btn');
+  btn.textContent = 'Enviando...';
+  btn.disabled = true;
+
+  const payload = {
+    first_name: document.getElementById('info-firstname').value,
+    last_name: document.getElementById('info-lastname').value,
+    business_email: email,
+    job_title: document.getElementById('info-jobtitle').value,
+    company_name: document.getElementById('info-company').value,
+    phone_country_code: document.getElementById('info-phone-cc').value,
+    phone_number: document.getElementById('info-phone').value,
+    country_code: 'MX',
+    country_name: 'México',
+    source_course: 'HFMEMBER',
+    source_name: 'The Human Advantage',
+    source_url: 'https://thehumanadvantage.riskmathicslabs.com'
+  };
+
+  try {
+    const resp = await fetch('https://bffdsgvgcvmojobfiuay.supabase.co/functions/v1/lead-distributor', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJmZmRzZ3ZnY3Ztb2pvYmZpdWF5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzUzOTQ0NzQsImV4cCI6MjA5MDk3MDQ3NH0.7VKn7st3POLRTLIXx9Y4gRjXbh8v_BKXblc7vFIVu-U'
+      },
+      body: JSON.stringify(payload)
+    });
+    document.getElementById('grial-info-form').style.display = 'none';
+    document.getElementById('info-success').style.display = 'block';
+  } catch (err) {
+    btn.textContent = 'Solicitar Información';
+    btn.disabled = false;
+    errDiv.textContent = 'Hubo un error. Por favor intenta de nuevo.';
+    errDiv.style.display = 'block';
+  }
+}
+
+// ── INSCRIPCIÓN — SUBMIT WITH PAYPAL ─────────────────────────────────────────
+async function submitInscripcionWithPaypal() {
+  const invoiceType = document.querySelector('input[name="invoice-type"]:checked')?.value || 'none';
+  const countryCode = document.getElementById('ins-country')?.value || 'MX';
+  
+  const payload = {
+    first_name: document.getElementById('ins-firstname').value,
+    last_name: document.getElementById('ins-lastname').value,
+    business_email: document.getElementById('ins-email').value,
+    phone_country_code: document.getElementById('ins-phone-cc').value,
+    phone_number: document.getElementById('ins-phone').value,
+    country_code: countryCode,
+    country_name: document.getElementById('ins-country').options[document.getElementById('ins-country').selectedIndex].text,
+    program_id: 'HFMEMBER',
+    program_name: 'The Human Advantage',
+    payment_method: 'paypal',
+    invoice_type: invoiceType,
+    tax_id: document.getElementById('ins-tax-id')?.value || '',
+    tax_regime: document.getElementById('ins-regime')?.value || '',
+    cfdi_use: document.getElementById('ins-cfdi')?.value || '',
+    fiscal_email: document.getElementById('ins-fiscal-email')?.value || '',
+    source_url: 'https://thehumanadvantage.riskmathicslabs.com'
+  };
+
+  try {
+    await fetch('https://bffdsgvgcvmojobfiuay.supabase.co/functions/v1/inscription-handler', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJmZmRzZ3ZnY3Ztb2pvYmZpdWF5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzUzOTQ0NzQsImV4cCI6MjA5MDk3MDQ3NH0.7VKn7st3POLRTLIXx9Y4gRjXbh8v_BKXblc7vFIVu-U'
+      },
+      body: JSON.stringify(payload)
+    });
+    [1,2,3].forEach(s => document.getElementById('inscripcion-step-' + s).style.display = 'none');
+    document.getElementById('inscripcion-success').style.display = 'block';
+  } catch(err) {
+    alert('Hubo un error. Por favor intenta de nuevo.');
+  }
+}
+</script>
 
 </body>
 </html>
