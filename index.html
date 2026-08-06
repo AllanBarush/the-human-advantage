@@ -1,2172 +1,296 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>THE HUMAN ADVANTAGE — RiskMathics Financial Innovation Lab</title>
-  <meta name="description" content="Design Thinking, Leadership & Strategic AI Innovation in the Age of AI. A 30-hour executive program by RiskMathics Financial Innovation Lab.">
-  <meta property="og:title" content="THE HUMAN ADVANTAGE — Executive Program">
-  <meta property="og:description" content="Design Thinking, Leadership & Strategic AI Innovation. 30 Hours · 6 Modules + Capstone · June 2026">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://allanbarush.github.io/the-human-advantage/">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <style>
-    /* ═══════════════════════════════════════════════════════
-       THE HUMAN ADVANTAGE — Landing Page Stylesheet
-       Design: Ken Segall · Jony Ive · Allan Barush
-       "Luxury is not adding. It's knowing what to remove."
-       ═══════════════════════════════════════════════════════ */
-
-    *, *::before, *::after {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    :root {
-      --navy: #0F172A;
-      --navy-light: #1E293B;
-      --navy-surface: #162033;
-      --coral: #F97316;
-      --coral-glow: rgba(249, 115, 22, 0.12);
-      --blue: #2563EB;
-      --blue-glow: rgba(37, 99, 235, 0.10);
-      --green: #10B981;
-      --green-glow: rgba(16, 185, 129, 0.10);
-      --white: #FFFFFF;
-      --off-white: #F1F5F9;
-      --gray-100: #E2E8F0;
-      --gray-200: #CBD5E1;
-      --gray-300: #94A3B8;
-      --gray-400: #64748B;
-      --font-heading: 'Poppins', sans-serif;
-      --font-body: 'Lora', serif;
-      --font-detail: 'Inter', sans-serif;
-    }
-
-    html {
-      scroll-behavior: smooth;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-
-    body {
-      background-color: var(--navy);
-      color: var(--white);
-      font-family: var(--font-body);
-      font-size: 17px;
-      line-height: 1.7;
-      overflow-x: hidden;
-    }
-
-    /* ─── Utility ─── */
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 32px;
-    }
-
-    @media (max-width: 768px) {
-      .container { padding: 0 20px; }
-    }
-
-    /* ─── Accent Bar (top) ─── */
-    .accent-bar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 4px;
-      background: linear-gradient(90deg, var(--coral), var(--blue), var(--green));
-      z-index: 1000;
-    }
-
-    /* ─── Navigation ─── */
-    .nav {
-      position: fixed;
-      top: 4px;
-      left: 0;
-      width: 100%;
-      z-index: 999;
-      padding: 20px 0;
-      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .nav.scrolled {
-      background: rgba(15, 23, 42, 0.95);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      padding: 14px 0;
-      box-shadow: 0 1px 0 rgba(255,255,255,0.05);
-    }
-
-    .nav-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .nav-brand {
-      font-family: var(--font-heading);
-      font-weight: 700;
-      font-size: 14px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--white);
-      text-decoration: none;
-      opacity: 0.9;
-    }
-
-    .nav-brand span {
-      color: var(--coral);
-    }
-
-    .nav-cta {
-      font-family: var(--font-detail);
-      font-size: 13px;
-      font-weight: 500;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: var(--coral);
-      text-decoration: none;
-      padding: 10px 24px;
-      border: 1px solid rgba(249, 115, 22, 0.4);
-      border-radius: 4px;
-      transition: all 0.3s ease;
-    }
-
-    .nav-cta:hover {
-      background: var(--coral);
-      color: var(--navy);
-      border-color: var(--coral);
-    }
-
-    /* ─── HERO ─── */
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      position: relative;
-      padding: 140px 32px 100px;
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 20%;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle, rgba(249,115,22,0.06) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    .hero::after {
-      content: '';
-      position: absolute;
-      bottom: 10%;
-      right: 10%;
-      width: 400px;
-      height: 400px;
-      background: radial-gradient(circle, rgba(37,99,235,0.04) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 900px;
-    }
-
-    .hero-label {
-      font-family: var(--font-detail);
-      font-size: 12px;
-      font-weight: 500;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      color: var(--coral);
-      margin-bottom: 32px;
-      opacity: 0;
-      animation: fadeUp 0.8s ease forwards 0.2s;
-    }
-
-    .hero-title {
-      font-family: var(--font-heading);
-      font-size: clamp(42px, 7vw, 80px);
-      font-weight: 800;
-      line-height: 1.05;
-      letter-spacing: -2px;
-      color: var(--white);
-      margin-bottom: 28px;
-      opacity: 0;
-      animation: fadeUp 0.8s ease forwards 0.4s;
-    }
-
-    .hero-title em {
-      font-style: normal;
-      background: linear-gradient(135deg, var(--coral), #FB923C);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .hero-subtitle {
-      font-family: var(--font-body);
-      font-size: clamp(18px, 2.5vw, 24px);
-      font-weight: 400;
-      line-height: 1.6;
-      color: var(--gray-200);
-      max-width: 700px;
-      margin: 0 auto 48px;
-      opacity: 0;
-      animation: fadeUp 0.8s ease forwards 0.6s;
-    }
-
-    .hero-meta {
-      display: flex;
-      justify-content: center;
-      gap: 48px;
-      flex-wrap: wrap;
-      opacity: 0;
-      animation: fadeUp 0.8s ease forwards 0.8s;
-    }
-
-    .hero-meta-item {
-      text-align: center;
-    }
-
-    .hero-meta-value {
-      font-family: var(--font-heading);
-      font-size: 28px;
-      font-weight: 700;
-      color: var(--white);
-      display: block;
-    }
-
-    .hero-meta-label {
-      font-family: var(--font-detail);
-      font-size: 11px;
-      font-weight: 400;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--gray-300);
-      margin-top: 4px;
-    }
-
-    .hero-scroll {
-      position: absolute;
-      bottom: 40px;
-      left: 50%;
-      transform: translateX(-50%);
-      opacity: 0;
-      animation: fadeUp 0.8s ease forwards 1s;
-    }
-
-    .hero-scroll a {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-decoration: none;
-      color: var(--gray-400);
-      font-family: var(--font-detail);
-      font-size: 11px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      gap: 8px;
-      transition: color 0.3s;
-    }
-
-    .hero-scroll a:hover { color: var(--coral); }
-
-    .hero-scroll svg {
-      animation: scrollBounce 2s ease infinite;
-    }
-
-    @keyframes scrollBounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(6px); }
-    }
-
-    /* ─── Section Base ─── */
-    section {
-      padding: 120px 0;
-      position: relative;
-    }
-
-    @media (max-width: 768px) {
-      section { padding: 80px 0; }
-    }
-
-    .section-label {
-      font-family: var(--font-detail);
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      color: var(--coral);
-      margin-bottom: 16px;
-    }
-
-    .section-title {
-      font-family: var(--font-heading);
-      font-size: clamp(32px, 4vw, 48px);
-      font-weight: 700;
-      line-height: 1.15;
-      letter-spacing: -1px;
-      color: var(--white);
-      margin-bottom: 20px;
-    }
-
-    .section-desc {
-      font-family: var(--font-body);
-      font-size: 18px;
-      line-height: 1.7;
-      color: var(--gray-300);
-      max-width: 640px;
-    }
-
-    .divider {
-      width: 60px;
-      height: 3px;
-      background: var(--coral);
-      border-radius: 2px;
-      margin: 24px 0;
-    }
-
-    /* ─── EXECUTIVE ABSTRACT ─── */
-    .abstract {
-      background: var(--navy);
-      padding: 100px 0 80px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .abstract::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(249,115,22,0.3), transparent);
-    }
-
-    .abstract-inner {
-      max-width: 860px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .abstract-label {
-      font-family: var(--font-detail);
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      color: var(--coral);
-      margin-bottom: 32px;
-    }
-
-    .abstract-text {
-      font-family: var(--font-body);
-      font-size: clamp(17px, 2vw, 20px);
-      line-height: 1.8;
-      color: var(--gray-200);
-      margin-bottom: 24px;
-    }
-
-    .abstract-text strong {
-      color: var(--white);
-      font-weight: 600;
-    }
-
-    .abstract-text em {
-      color: var(--coral);
-      font-style: normal;
-      font-weight: 600;
-    }
-
-    .abstract-stats-row {
-      display: flex;
-      justify-content: center;
-      gap: 32px;
-      flex-wrap: wrap;
-      margin-top: 40px;
-      padding-top: 40px;
-      border-top: 1px solid rgba(255,255,255,0.06);
-    }
-
-    .abstract-stat {
-      text-align: center;
-      min-width: 120px;
-    }
-
-    .abstract-stat-value {
-      font-family: var(--font-heading);
-      font-size: 32px;
-      font-weight: 800;
-      color: var(--coral);
-      display: block;
-      line-height: 1.2;
-    }
-
-    .abstract-stat-label {
-      font-family: var(--font-detail);
-      font-size: 11px;
-      font-weight: 400;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: var(--gray-400);
-      margin-top: 6px;
-    }
-
-    @media (max-width: 768px) {
-      .abstract { padding: 72px 0 60px; }
-      .abstract-stats-row { gap: 24px; }
-    }
-
-    /* ─── ABOUT / OVERVIEW ─── */
-    .about {
-      background: var(--navy);
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: center;
-    }
-
-    @media (max-width: 900px) {
-      .about-grid { grid-template-columns: 1fr; gap: 48px; }
-    }
-
-    .about-text p {
-      color: var(--gray-200);
-      margin-bottom: 20px;
-      font-size: 17px;
-    }
-
-    .about-stats {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-    }
-
-    .stat-card {
-      background: var(--navy-surface);
-      border: 1px solid rgba(255,255,255,0.06);
-      border-radius: 12px;
-      padding: 32px 28px;
-      text-align: center;
-      transition: all 0.4s ease;
-    }
-
-    .stat-card:hover {
-      border-color: rgba(249,115,22,0.2);
-      transform: translateY(-4px);
-    }
-
-    .stat-card .stat-value {
-      font-family: var(--font-heading);
-      font-size: 36px;
-      font-weight: 700;
-      color: var(--coral);
-      display: block;
-      margin-bottom: 8px;
-    }
-
-    .stat-card .stat-label {
-      font-family: var(--font-detail);
-      font-size: 13px;
-      font-weight: 400;
-      color: var(--gray-300);
-      letter-spacing: 0.5px;
-    }
-
-    /* ─── MODULES ─── */
-    .modules {
-      background: var(--navy-light);
-    }
-
-    .modules-header {
-      text-align: center;
-      margin-bottom: 72px;
-    }
-
-    .modules-header .section-desc {
-      margin: 0 auto;
-    }
-
-    .modules-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-      gap: 24px;
-    }
-
-    @media (max-width: 768px) {
-      .modules-grid { grid-template-columns: 1fr; }
-    }
-
-    .module-card {
-      background: var(--navy);
-      border: 1px solid rgba(255,255,255,0.06);
-      border-radius: 12px;
-      padding: 40px 32px;
-      position: relative;
-      overflow: hidden;
-      transition: all 0.4s ease;
-    }
-
-    .module-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 3px;
-      background: var(--coral);
-      opacity: 0;
-      transition: opacity 0.4s ease;
-    }
-
-    .module-card:hover {
-      border-color: rgba(249,115,22,0.15);
-      transform: translateY(-4px);
-    }
-
-    .module-card:hover::before {
-      opacity: 1;
-    }
-
-    .module-number {
-      font-family: var(--font-heading);
-      font-size: 48px;
-      font-weight: 800;
-      color: rgba(249,115,22,0.12);
-      line-height: 1;
-      margin-bottom: 16px;
-    }
-
-    .module-title {
-      font-family: var(--font-heading);
-      font-size: 20px;
-      font-weight: 600;
-      color: var(--white);
-      margin-bottom: 12px;
-      line-height: 1.3;
-    }
-
-    .module-desc {
-      font-family: var(--font-body);
-      font-size: 15px;
-      color: var(--gray-300);
-      line-height: 1.65;
-    }
-
-    .module-hours {
-      font-family: var(--font-detail);
-      font-size: 12px;
-      font-weight: 500;
-      color: var(--coral);
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      margin-top: 16px;
-      display: inline-block;
-    }
-
-    .capstone-card {
-      grid-column: 1 / -1;
-      background: linear-gradient(135deg, rgba(249,115,22,0.08), rgba(37,99,235,0.06));
-      border-color: rgba(249,115,22,0.15);
-    }
-
-    .capstone-card .module-number {
-      color: rgba(249,115,22,0.25);
-    }
-
-    /* ─── AUDIENCE ─── */
-    .audience {
-      background: var(--navy);
-    }
-
-    .audience-header {
-      margin-bottom: 64px;
-    }
-
-    .audience-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
-    }
-
-    .audience-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 16px;
-      padding: 28px 24px;
-      background: var(--navy-surface);
-      border: 1px solid rgba(255,255,255,0.05);
-      border-radius: 10px;
-      transition: all 0.3s ease;
-    }
-
-    .audience-item:hover {
-      border-color: rgba(37,99,235,0.2);
-      transform: translateY(-2px);
-    }
-
-    .audience-icon {
-      flex-shrink: 0;
-      width: 40px;
-      height: 40px;
-      border-radius: 8px;
-      background: var(--blue-glow);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .audience-icon svg {
-      width: 20px;
-      height: 20px;
-      color: var(--blue);
-    }
-
-    .audience-role {
-      font-family: var(--font-heading);
-      font-size: 15px;
-      font-weight: 600;
-      color: var(--white);
-      margin-bottom: 4px;
-    }
-
-    .audience-detail {
-      font-family: var(--font-detail);
-      font-size: 13px;
-      color: var(--gray-400);
-      line-height: 1.5;
-    }
-
-    /* ─── DELIVERABLES ─── */
-    .deliverables {
-      background: var(--navy-light);
-    }
-
-    .deliverables-header {
-      text-align: center;
-      margin-bottom: 72px;
-    }
-
-    .deliverables-header .section-desc {
-      margin: 0 auto;
-    }
-
-    .deliverables-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 20px;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    @media (max-width: 768px) {
-      .deliverables-list { grid-template-columns: 1fr; }
-    }
-
-    .deliverable-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 20px;
-      padding: 28px;
-      background: var(--navy);
-      border: 1px solid rgba(255,255,255,0.05);
-      border-radius: 10px;
-      transition: all 0.3s ease;
-    }
-
-    .deliverable-item:hover {
-      border-color: rgba(16,185,129,0.2);
-      transform: translateY(-2px);
-    }
-
-    .deliverable-num {
-      flex-shrink: 0;
-      width: 36px;
-      height: 36px;
-      border-radius: 8px;
-      background: var(--green-glow);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: var(--font-heading);
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--green);
-    }
-
-    .deliverable-title {
-      font-family: var(--font-heading);
-      font-size: 16px;
-      font-weight: 600;
-      color: var(--white);
-      margin-bottom: 4px;
-    }
-
-    .deliverable-desc {
-      font-family: var(--font-detail);
-      font-size: 13px;
-      color: var(--gray-400);
-      line-height: 1.5;
-    }
-
-    /* ─── FACULTY ─── */
-    .faculty {
-      background: var(--navy);
-    }
-
-    .faculty-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: center;
-    }
-
-    @media (max-width: 900px) {
-      .faculty-grid { grid-template-columns: 1fr; gap: 48px; }
-    }
-
-    .faculty-text p {
-      color: var(--gray-200);
-      margin-bottom: 20px;
-      font-size: 17px;
-    }
-
-    .faculty-features {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-
-    .faculty-feature {
-      display: flex;
-      align-items: flex-start;
-      gap: 16px;
-      padding: 24px;
-      background: var(--navy-surface);
-      border: 1px solid rgba(255,255,255,0.05);
-      border-radius: 10px;
-    }
-
-    .faculty-feature-icon {
-      flex-shrink: 0;
-      width: 44px;
-      height: 44px;
-      border-radius: 10px;
-      background: var(--coral-glow);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .faculty-feature-icon svg {
-      width: 22px;
-      height: 22px;
-      color: var(--coral);
-    }
-
-    .faculty-feature-title {
-      font-family: var(--font-heading);
-      font-size: 15px;
-      font-weight: 600;
-      color: var(--white);
-      margin-bottom: 4px;
-    }
-
-    .faculty-feature-desc {
-      font-family: var(--font-detail);
-      font-size: 13px;
-      color: var(--gray-400);
-      line-height: 1.5;
-    }
-
-    /* ─── PRICING ─── */
-    .pricing {
-      background: var(--navy-light);
-    }
-
-    .pricing-header {
-      text-align: center;
-      margin-bottom: 72px;
-    }
-
-    .pricing-header .section-desc {
-      margin: 0 auto;
-    }
-
-    .pricing-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 32px;
-      max-width: 860px;
-      margin: 0 auto;
-    }
-
-    @media (max-width: 768px) {
-      .pricing-grid { grid-template-columns: 1fr; }
-    }
-
-    .pricing-card {
-      background: var(--navy);
-      border: 1px solid rgba(255,255,255,0.06);
-      border-radius: 16px;
-      padding: 48px 40px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-      transition: all 0.4s ease;
-    }
-
-    .pricing-card:hover {
-      transform: translateY(-4px);
-    }
-
-    .pricing-card.featured {
-      border-color: rgba(249,115,22,0.3);
-    }
-
-    .pricing-card.featured::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 3px;
-      background: linear-gradient(90deg, var(--coral), #FB923C);
-    }
-
-    .pricing-badge {
-      font-family: var(--font-detail);
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--coral);
-      background: var(--coral-glow);
-      padding: 6px 16px;
-      border-radius: 20px;
-      display: inline-block;
-      margin-bottom: 24px;
-    }
-
-    .pricing-type {
-      font-family: var(--font-heading);
-      font-size: 24px;
-      font-weight: 700;
-      color: var(--white);
-      margin-bottom: 8px;
-    }
-
-    .pricing-desc {
-      font-family: var(--font-detail);
-      font-size: 14px;
-      color: var(--gray-400);
-      margin-bottom: 32px;
-    }
-
-    .pricing-amount {
-      font-family: var(--font-heading);
-      font-size: 42px;
-      font-weight: 800;
-      color: var(--white);
-      margin-bottom: 4px;
-    }
-
-    .pricing-amount span {
-      font-size: 18px;
-      font-weight: 400;
-      color: var(--gray-300);
-    }
-
-    .pricing-unit {
-      font-family: var(--font-detail);
-      font-size: 13px;
-      color: var(--gray-400);
-      margin-bottom: 32px;
-    }
-
-    .pricing-features {
-      list-style: none;
-      text-align: left;
-      margin-bottom: 36px;
-    }
-
-    .pricing-features li {
-      font-family: var(--font-detail);
-      font-size: 14px;
-      color: var(--gray-200);
-      padding: 10px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.04);
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .pricing-features li svg {
-      flex-shrink: 0;
-      color: var(--green);
-    }
-
-    .pricing-btn {
-      display: inline-block;
-      width: 100%;
-      padding: 16px 32px;
-      font-family: var(--font-detail);
-      font-size: 14px;
-      font-weight: 600;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      text-decoration: none;
-      border-radius: 8px;
-      transition: all 0.3s ease;
-      cursor: pointer;
-      border: none;
-    }
-
-    .pricing-btn-primary {
-      background: var(--coral);
-      color: var(--white);
-    }
-
-    .pricing-btn-primary:hover {
-      background: #EA580C;
-      transform: translateY(-2px);
-      box-shadow: 0 8px 32px rgba(249,115,22,0.3);
-    }
-
-    .pricing-btn-secondary {
-      background: transparent;
-      color: var(--white);
-      border: 1px solid rgba(255,255,255,0.15);
-    }
-
-    .pricing-btn-secondary:hover {
-      border-color: var(--coral);
-      color: var(--coral);
-    }
-
-    /* ─── REGISTRATION FORM ─── */
-    .registration {
-      background: var(--navy);
-      position: relative;
-    }
-
-    .registration::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 800px;
-      height: 800px;
-      background: radial-gradient(circle, rgba(249,115,22,0.04) 0%, transparent 60%);
-      pointer-events: none;
-    }
-
-    .registration-header {
-      text-align: center;
-      margin-bottom: 64px;
-      position: relative;
-      z-index: 2;
-    }
-
-    .registration-header .section-desc {
-      margin: 0 auto;
-    }
-
-    .form-wrapper {
-      max-width: 680px;
-      margin: 0 auto;
-      background: var(--navy-surface);
-      border: 1px solid rgba(255,255,255,0.06);
-      border-radius: 16px;
-      padding: 56px 48px;
-      position: relative;
-      z-index: 2;
-    }
-
-    @media (max-width: 768px) {
-      .form-wrapper { padding: 36px 24px; }
-    }
-
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-      margin-bottom: 20px;
-    }
-
-    @media (max-width: 600px) {
-      .form-row { grid-template-columns: 1fr; }
-    }
-
-    .form-group {
-      margin-bottom: 20px;
-    }
-
-    .form-row .form-group {
-      margin-bottom: 0;
-    }
-
-    .form-label {
-      display: block;
-      font-family: var(--font-detail);
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--gray-200);
-      margin-bottom: 8px;
-      letter-spacing: 0.3px;
-    }
-
-    .form-label .required {
-      color: var(--coral);
-      margin-left: 2px;
-    }
-
-    .form-input,
-    .form-select {
-      width: 100%;
-      padding: 14px 18px;
-      font-family: var(--font-detail);
-      font-size: 15px;
-      color: var(--white);
-      background: var(--navy);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 8px;
-      outline: none;
-      transition: all 0.3s ease;
-      -webkit-appearance: none;
-      appearance: none;
-    }
-
-    .form-input::placeholder {
-      color: var(--gray-400);
-    }
-
-    .form-input:focus,
-    .form-select:focus {
-      border-color: var(--coral);
-      box-shadow: 0 0 0 3px rgba(249,115,22,0.1);
-    }
-
-    .form-input.error {
-      border-color: #EF4444;
-      box-shadow: 0 0 0 3px rgba(239,68,68,0.1);
-    }
-
-    .form-select {
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2394A3B8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: right 16px center;
-      padding-right: 44px;
-      cursor: pointer;
-    }
-
-    .form-select option {
-      background: var(--navy);
-      color: var(--white);
-    }
-
-    .form-error {
-      font-family: var(--font-detail);
-      font-size: 12px;
-      color: #EF4444;
-      margin-top: 6px;
-      display: none;
-    }
-
-    .form-error.visible {
-      display: block;
-    }
-
-    .form-submit {
-      width: 100%;
-      padding: 18px 32px;
-      font-family: var(--font-detail);
-      font-size: 15px;
-      font-weight: 600;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: var(--white);
-      background: linear-gradient(135deg, var(--coral), #EA580C);
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      margin-top: 12px;
-    }
-
-    .form-submit:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 12px 40px rgba(249,115,22,0.3);
-    }
-
-    .form-submit:active {
-      transform: translateY(0);
-    }
-
-    .form-submit:disabled {
-      opacity: 0.7;
-      cursor: not-allowed;
-      transform: none;
-      box-shadow: none;
-    }
-
-    .form-submit .spinner {
-      display: inline-block;
-      width: 18px;
-      height: 18px;
-      border: 2px solid rgba(255,255,255,0.3);
-      border-top-color: var(--white);
-      border-radius: 50%;
-      animation: spin 0.6s linear infinite;
-      vertical-align: middle;
-      margin-right: 8px;
-    }
-
-    @keyframes spin {
-      to { transform: rotate(360deg); }
-    }
-
-    .form-error-banner {
-      background: rgba(239,68,68,0.1);
-      border: 1px solid rgba(239,68,68,0.3);
-      border-radius: 8px;
-      padding: 14px 20px;
-      margin-bottom: 20px;
-      font-family: var(--font-detail);
-      font-size: 14px;
-      color: #FCA5A5;
-      display: none;
-      text-align: center;
-    }
-
-    .form-error-banner.visible {
-      display: block;
-    }
-
-    .form-disclaimer {
-      font-family: var(--font-detail);
-      font-size: 12px;
-      color: var(--gray-400);
-      text-align: center;
-      margin-top: 20px;
-      line-height: 1.6;
-    }
-
-    /* Success state */
-    .form-success {
-      display: none;
-      text-align: center;
-      padding: 48px 24px;
-    }
-
-    .form-success.visible {
-      display: block;
-    }
-
-    .form-success svg {
-      color: var(--green);
-      margin-bottom: 24px;
-    }
-
-    .form-success h3 {
-      font-family: var(--font-heading);
-      font-size: 28px;
-      font-weight: 700;
-      color: var(--white);
-      margin-bottom: 12px;
-    }
-
-    .form-success p {
-      font-family: var(--font-body);
-      font-size: 16px;
-      color: var(--gray-300);
-      max-width: 400px;
-      margin: 0 auto;
-    }
-
-    /* ─── FOOTER ─── */
-    .footer {
-      background: var(--navy);
-      border-top: 1px solid rgba(255,255,255,0.05);
-      padding: 64px 0 40px;
-    }
-
-    .footer-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      flex-wrap: wrap;
-      gap: 40px;
-    }
-
-    .footer-brand {
-      max-width: 360px;
-    }
-
-    .footer-brand-name {
-      font-family: var(--font-heading);
-      font-size: 16px;
-      font-weight: 700;
-      color: var(--white);
-      margin-bottom: 12px;
-      letter-spacing: 1px;
-    }
-
-    .footer-brand-name span {
-      color: var(--coral);
-    }
-
-    .footer-brand p {
-      font-family: var(--font-detail);
-      font-size: 14px;
-      color: var(--gray-400);
-      line-height: 1.7;
-    }
-
-    .footer-contact {
-      text-align: right;
-    }
-
-    @media (max-width: 768px) {
-      .footer-contact { text-align: left; }
-    }
-
-    .footer-contact-label {
-      font-family: var(--font-detail);
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--gray-400);
-      margin-bottom: 8px;
-    }
-
-    .footer-contact a {
-      font-family: var(--font-detail);
-      font-size: 16px;
-      color: var(--coral);
-      text-decoration: none;
-      transition: opacity 0.3s;
-    }
-
-    .footer-contact a:hover {
-      opacity: 0.8;
-    }
-
-    .footer-bottom {
-      margin-top: 48px;
-      padding-top: 24px;
-      border-top: 1px solid rgba(255,255,255,0.05);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 16px;
-    }
-
-    .footer-copy {
-      font-family: var(--font-detail);
-      font-size: 13px;
-      color: var(--gray-400);
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 24px;
-    }
-
-    .footer-links a {
-      font-family: var(--font-detail);
-      font-size: 13px;
-      color: var(--gray-400);
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-
-    .footer-links a:hover {
-      color: var(--coral);
-    }
-
-    /* ─── Animations ─── */
-    @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(24px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(32px);
-      transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* ─── Custom Scrollbar ─── */
-    ::-webkit-scrollbar {
-      width: 8px;
-    }
-
-    ::-webkit-scrollbar-track {
-      background: var(--navy);
-    }
-
-    ::-webkit-scrollbar-thumb {
-      background: var(--navy-light);
-      border-radius: 4px;
-    }
-
-    ::-webkit-scrollbar-thumb:hover {
-      background: var(--gray-400);
-    }
-  </style>
-</head>
-<body>
-
-  <!-- Accent Bar -->
-  <div class="accent-bar"></div>
-
-  <!-- Navigation -->
-  <nav class="nav" id="nav">
-    <div class="container nav-inner">
-      <a href="#" class="nav-brand">RiskMathics <span>Financial Innovation Lab</span></a>
-      <a href="#register" class="nav-cta">Register Now</a>
-    </div>
-  </nav>
-
-  <!-- ═══════════════════════════════════════════════════════
-       HERO
-       ═══════════════════════════════════════════════════════ -->
-  <section class="hero" id="hero">
-    <div class="hero-content">
-      <p class="hero-label">Executive Program &middot; June 2026</p>
-      <h1 class="hero-title">THE HUMAN<br><em>ADVANTAGE</em></h1>
-      <p class="hero-subtitle">Design Thinking, Leadership &amp; Strategic AI Innovation in the Age of AI</p>
-      <div class="hero-meta">
-        <div class="hero-meta-item">
-          <span class="hero-meta-value">30</span>
-          <span class="hero-meta-label">Hours</span>
-        </div>
-        <div class="hero-meta-item">
-          <span class="hero-meta-value">6+1</span>
-          <span class="hero-meta-label">Modules + Capstone</span>
-        </div>
-        <div class="hero-meta-item">
-          <span class="hero-meta-value">7</span>
-          <span class="hero-meta-label">Executive Deliverables</span>
-        </div>
-        <div class="hero-meta-item">
-          <span class="hero-meta-value">June</span>
-          <span class="hero-meta-label">2026</span>
-        </div>
-      </div>
-    </div>
-    <div class="hero-scroll">
-      <a href="#about">
-        <span>Discover</span>
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-      </a>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════════════════
-       EXECUTIVE ABSTRACT
-       ═══════════════════════════════════════════════════════ -->
-  <section class="abstract" id="abstract">
-    <div class="container">
-      <div class="abstract-inner reveal">
-        <p class="abstract-label">Por qué ahora</p>
-        <p class="abstract-text">
-          Desde 2020, el entorno se volvió <strong>estructuralmente más incierto</strong>: pandemia, disrupciones en cadenas de suministro, inflación y endurecimiento monetario. En paralelo, la IA saltó de proyecto a <strong>comportamiento cotidiano</strong> dentro de las organizaciones. El <em>Work Trend Index 2024</em> reporta que el 75% de los trabajadores del conocimiento ya usan IA y el 78% traen sus propias herramientas (BYOAI).
-        </p>
-        <p class="abstract-text">
-          Sin embargo, <strong>el 70% de las transformaciones fracasan</strong> (McKinsey). La ventaja competitiva ya no es tener IA — es tener las <strong>capacidades humanas y el sistema de ejecución</strong> para liderar con ella. <em>THE HUMAN ADVANTAGE</em> cierra esa brecha en 30 horas con 7 entregables listos para el consejo directivo.
-        </p>
-        <div class="abstract-stats-row">
-          <div class="abstract-stat">
-            <span class="abstract-stat-value">75%</span>
-            <span class="abstract-stat-label">Usan IA en el trabajo</span>
-          </div>
-          <div class="abstract-stat">
-            <span class="abstract-stat-value">78%</span>
-            <span class="abstract-stat-label">BYOAI</span>
-          </div>
-          <div class="abstract-stat">
-            <span class="abstract-stat-value">70%</span>
-            <span class="abstract-stat-label">Transformaciones fallan</span>
-          </div>
-          <div class="abstract-stat">
-            <span class="abstract-stat-value">30h</span>
-            <span class="abstract-stat-label">Para cerrar la brecha</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════════════════
-       ABOUT / OVERVIEW
-       ═══════════════════════════════════════════════════════ -->
-  <section class="about" id="about">
-    <div class="container">
-      <div class="about-grid">
-        <div class="about-text reveal">
-          <p class="section-label">The Program</p>
-          <h2 class="section-title">AI won't replace leaders.<br>Leaders who understand AI will.</h2>
-          <div class="divider"></div>
-          <p>The Human Advantage is an intensive executive program designed for senior leaders navigating the intersection of human judgment and artificial intelligence. Over 30 hours across six modules and a capstone project, participants develop the strategic frameworks needed to lead transformation with clarity, empathy, and measurable impact.</p>
-          <p>This is not a technology course. It is a leadership accelerator that equips executives with Design Thinking methodology, agile transformation strategies, and a human-centered approach to AI adoption that drives real organizational change.</p>
-        </div>
-        <div class="about-stats reveal">
-          <div class="stat-card">
-            <span class="stat-value">30h</span>
-            <span class="stat-label">Intensive Program</span>
-          </div>
-          <div class="stat-card">
-            <span class="stat-value">6+1</span>
-            <span class="stat-label">Modules + Capstone</span>
-          </div>
-          <div class="stat-card">
-            <span class="stat-value">7</span>
-            <span class="stat-label">Executive Deliverables</span>
-          </div>
-          <div class="stat-card">
-            <span class="stat-value">90d</span>
-            <span class="stat-label">Transformation Roadmap</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════════════════
-       MODULES
-       ═══════════════════════════════════════════════════════ -->
-  <section class="modules" id="modules">
-    <div class="container">
-      <div class="modules-header reveal">
-        <p class="section-label">Curriculum</p>
-        <h2 class="section-title">Six modules. One capstone.<br>Thirty hours of transformation.</h2>
-        <div class="divider" style="margin: 24px auto;"></div>
-        <p class="section-desc">Each module builds on the previous one, creating a progressive journey from individual leadership clarity to organizational-scale AI transformation.</p>
-      </div>
-      <div class="modules-grid">
-        <div class="module-card reveal">
-          <div class="module-number">01</div>
-          <h3 class="module-title">The Human Edge in the Age of AI</h3>
-          <p class="module-desc">Understand why human judgment, creativity, and emotional intelligence remain irreplaceable. Map the evolving landscape of human-AI collaboration in your organization.</p>
-          <span class="module-hours">5 Hours</span>
-        </div>
-        <div class="module-card reveal">
-          <div class="module-number">02</div>
-          <h3 class="module-title">Design Thinking for Executive Decision-Making</h3>
-          <p class="module-desc">Apply human-centered design methodology to strategic challenges. Learn to prototype solutions, validate assumptions, and iterate with speed and precision.</p>
-          <span class="module-hours">5 Hours</span>
-        </div>
-        <div class="module-card reveal">
-          <div class="module-number">03</div>
-          <h3 class="module-title">Leading Agile Transformation</h3>
-          <p class="module-desc">Build the organizational muscle for continuous adaptation. Design your 90-day agile transformation roadmap with clear milestones and accountability structures.</p>
-          <span class="module-hours">5 Hours</span>
-        </div>
-        <div class="module-card reveal">
-          <div class="module-number">04</div>
-          <h3 class="module-title">Executive Storytelling &amp; Influence</h3>
-          <p class="module-desc">Master the art of narrative-driven leadership. Craft compelling stories that align teams, secure buy-in from stakeholders, and drive cultural change.</p>
-          <span class="module-hours">5 Hours</span>
-        </div>
-        <div class="module-card reveal">
-          <div class="module-number">05</div>
-          <h3 class="module-title">Strategic AI Adoption &amp; Governance</h3>
-          <p class="module-desc">Develop a responsible AI adoption plan aligned with NIST frameworks. Balance innovation velocity with risk controls, ethics, and regulatory compliance.</p>
-          <span class="module-hours">5 Hours</span>
-        </div>
-        <div class="module-card reveal">
-          <div class="module-number">06</div>
-          <h3 class="module-title">Building High-Performance Human-AI Teams</h3>
-          <p class="module-desc">Design team structures that maximize the synergy between human talent and AI capabilities. Create your Human Advantage Team Blueprint for sustainable performance.</p>
-          <span class="module-hours">5 Hours</span>
-        </div>
-        <div class="module-card capstone-card reveal">
-          <div class="module-number">C</div>
-          <h3 class="module-title">Capstone: Your Human Advantage Transformation Plan</h3>
-          <p class="module-desc">Integrate all six modules into a comprehensive, board-ready transformation plan for your organization. Present to peers and faculty for executive feedback. Leave with a complete, actionable strategy and seven professional deliverables.</p>
-          <span class="module-hours">Integrated Across Program</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════════════════
-       AUDIENCE
-       ═══════════════════════════════════════════════════════ -->
-  <section class="audience" id="audience">
-    <div class="container">
-      <div class="audience-header reveal">
-        <p class="section-label">Who Should Attend</p>
-        <h2 class="section-title">Designed for leaders who shape<br>the future of their organizations.</h2>
-        <div class="divider"></div>
-      </div>
-      <div class="audience-grid">
-        <div class="audience-item reveal">
-          <div class="audience-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-          </div>
-          <div>
-            <div class="audience-role">C-Suite Executives</div>
-            <div class="audience-detail">CEOs, COOs, CTOs, CIOs, CHROs leading enterprise transformation</div>
-          </div>
-        </div>
-        <div class="audience-item reveal">
-          <div class="audience-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
-          </div>
-          <div>
-            <div class="audience-role">Directors of Transformation</div>
-            <div class="audience-detail">Digital transformation leaders driving organizational change</div>
-          </div>
-        </div>
-        <div class="audience-item reveal">
-          <div class="audience-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
-          </div>
-          <div>
-            <div class="audience-role">Directors of Technology</div>
-            <div class="audience-detail">Technology leaders integrating AI into enterprise architecture</div>
-          </div>
-        </div>
-        <div class="audience-item reveal">
-          <div class="audience-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>
-          </div>
-          <div>
-            <div class="audience-role">Directors of Operations</div>
-            <div class="audience-detail">Operations leaders optimizing processes with human-AI synergy</div>
-          </div>
-        </div>
-        <div class="audience-item reveal">
-          <div class="audience-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-          </div>
-          <div>
-            <div class="audience-role">Directors of Risk</div>
-            <div class="audience-detail">Risk officers building governance frameworks for AI adoption</div>
-          </div>
-        </div>
-        <div class="audience-item reveal">
-          <div class="audience-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-          </div>
-          <div>
-            <div class="audience-role">HR &amp; Talent Leaders</div>
-            <div class="audience-detail">CHROs and talent directors redesigning workforce strategy</div>
-          </div>
-        </div>
-        <div class="audience-item reveal">
-          <div class="audience-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
-          </div>
-          <div>
-            <div class="audience-role">PMO &amp; Agile Leaders</div>
-            <div class="audience-detail">Program managers and agile coaches scaling transformation</div>
-          </div>
-        </div>
-        <div class="audience-item reveal">
-          <div class="audience-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-          </div>
-          <div>
-            <div class="audience-role">Innovation Directors</div>
-            <div class="audience-detail">Innovation leaders building the bridge between strategy and execution</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════════════════
-       DELIVERABLES
-       ═══════════════════════════════════════════════════════ -->
-  <section class="deliverables" id="deliverables">
-    <div class="container">
-      <div class="deliverables-header reveal">
-        <p class="section-label">What You Take Home</p>
-        <h2 class="section-title">Seven executive deliverables.<br>Zero theory without action.</h2>
-        <div class="divider" style="margin: 24px auto;"></div>
-        <p class="section-desc">Every deliverable is built during the program with faculty guidance. You leave with board-ready documents, not just notes.</p>
-      </div>
-      <div class="deliverables-list">
-        <div class="deliverable-item reveal">
-          <div class="deliverable-num">1</div>
-          <div>
-            <div class="deliverable-title">Human-AI Role Map</div>
-            <div class="deliverable-desc">A comprehensive mapping of human vs. AI responsibilities across your organization's key functions and processes.</div>
-          </div>
-        </div>
-        <div class="deliverable-item reveal">
-          <div class="deliverable-num">2</div>
-          <div>
-            <div class="deliverable-title">Agile Transformation Roadmap (90 Days)</div>
-            <div class="deliverable-desc">A phased, milestone-driven plan for implementing agile practices with clear accountability and success metrics.</div>
-          </div>
-        </div>
-        <div class="deliverable-item reveal">
-          <div class="deliverable-num">3</div>
-          <div>
-            <div class="deliverable-title">Executive Storytelling Playbook</div>
-            <div class="deliverable-desc">Your personal toolkit of narrative frameworks, stakeholder-specific messaging, and change communication strategies.</div>
-          </div>
-        </div>
-        <div class="deliverable-item reveal">
-          <div class="deliverable-num">4</div>
-          <div>
-            <div class="deliverable-title">Human Advantage Team Blueprint</div>
-            <div class="deliverable-desc">A structural design for high-performance teams that optimally integrate human talent with AI capabilities.</div>
-          </div>
-        </div>
-        <div class="deliverable-item reveal">
-          <div class="deliverable-num">5</div>
-          <div>
-            <div class="deliverable-title">AI Adoption Plan</div>
-            <div class="deliverable-desc">A strategic roadmap for responsible AI integration, including vendor evaluation criteria and implementation phases.</div>
-          </div>
-        </div>
-        <div class="deliverable-item reveal">
-          <div class="deliverable-num">6</div>
-          <div>
-            <div class="deliverable-title">Risk Control Starter Kit (NIST-Aligned)</div>
-            <div class="deliverable-desc">A governance framework aligned with NIST AI Risk Management standards, ready for board presentation and compliance review.</div>
-          </div>
-        </div>
-        <div class="deliverable-item reveal">
-          <div class="deliverable-num">7</div>
-          <div>
-            <div class="deliverable-title">Impact Scorecard</div>
-            <div class="deliverable-desc">A measurement framework with KPIs, baselines, and targets to track the ROI of your human-AI transformation initiatives.</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════════════════
-       FACULTY
-       ═══════════════════════════════════════════════════════ -->
-  <section class="faculty" id="faculty">
-    <div class="container">
-      <div class="faculty-grid">
-        <div class="faculty-text reveal">
-          <p class="section-label">Faculty</p>
-          <h2 class="section-title">Practitioners, not professors.</h2>
-          <div class="divider"></div>
-          <p>Our faculty are senior practitioners who have led transformation at scale in financial services, technology, and consulting. They bring real-world case studies, battle-tested frameworks, and the kind of candor that only comes from having done the work themselves.</p>
-          <p>Every instructor has a minimum of 15 years of executive experience and active advisory roles with leading organizations across Latin America and globally.</p>
-        </div>
-        <div class="faculty-features reveal">
-          <div class="faculty-feature">
-            <div class="faculty-feature-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
-            </div>
-            <div>
-              <div class="faculty-feature-title">Real-World Experience</div>
-              <div class="faculty-feature-desc">Every framework taught has been deployed in live organizational transformations, not simulated environments.</div>
-            </div>
-          </div>
-          <div class="faculty-feature">
-            <div class="faculty-feature-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
-            </div>
-            <div>
-              <div class="faculty-feature-title">Cross-Industry Perspective</div>
-              <div class="faculty-feature-desc">Banking, insurance, asset management, technology, consulting — diverse sectors, universal principles.</div>
-            </div>
-          </div>
-          <div class="faculty-feature">
-            <div class="faculty-feature-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
-            </div>
-            <div>
-              <div class="faculty-feature-title">Global &amp; LatAm Focus</div>
-              <div class="faculty-feature-desc">International best practices adapted for the Latin American business context and regulatory landscape.</div>
-            </div>
-          </div>
-          <div class="faculty-feature">
-            <div class="faculty-feature-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
-            </div>
-            <div>
-              <div class="faculty-feature-title">Active Advisory Roles</div>
-              <div class="faculty-feature-desc">Currently advising boards and C-suites on AI strategy, digital transformation, and organizational design.</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════════════════
-       PRICING
-       ═══════════════════════════════════════════════════════ -->
-  <section class="pricing" id="pricing">
-    <div class="container">
-      <div class="pricing-header reveal">
-        <p class="section-label">Investment</p>
-        <h2 class="section-title">Two formats. One standard of excellence.</h2>
-        <div class="divider" style="margin: 24px auto;"></div>
-        <p class="section-desc">Choose the format that best fits your organization's needs. Both deliver the same rigorous curriculum and executive deliverables.</p>
-      </div>
-      <div class="pricing-grid">
-        <div class="pricing-card featured reveal">
-          <div class="pricing-badge">Enroll Now</div>
-          <div class="pricing-type">Open Program</div>
-          <div class="pricing-desc">Individual enrollment for executives</div>
-          <div class="pricing-amount">$65,000 <span>MXN</span></div>
-          <div class="pricing-unit">per participant</div>
-          <ul class="pricing-features">
-            <li>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              30 hours of live instruction
-            </li>
-            <li>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              7 executive deliverables
-            </li>
-            <li>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              Cross-industry peer network
-            </li>
-            <li>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              Certificate of completion
-            </li>
-            <li>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              Post-program faculty access
-            </li>
-          </ul>
-          <a href="#register" class="pricing-btn pricing-btn-primary">Enroll Now</a>
-        </div>
-        <div class="pricing-card reveal">
-          <div class="pricing-badge" style="background: var(--blue-glow); color: var(--blue);">Request Info</div>
-          <div class="pricing-type">More Information</div>
-          <div class="pricing-desc">Have questions? Request detailed information</div>
-          <div class="pricing-amount">$1.6M–3.0M <span>MXN</span></div>
-          <div class="pricing-unit">no commitment</div>
-          <ul class="pricing-features">
-            <li>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              Full program details & syllabus
-            </li>
-            <li>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              On-site or hybrid delivery
-            </li>
-            <li>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              Organization-specific case studies
-            </li>
-            <li>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              Up to 30 participants
-            </li>
-            <li>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              Executive coaching sessions
-            </li>
-          </ul>
-          <a href="mailto:executive@riskmathics.com?subject=More Information%20Inquiry%20%E2%80%93%20The%20Human%20Advantage&body=I%20would%20like%20to%20request%20more%20information%20about%20The%20Human%20Advantage%20More Information%20program%20for%20my%20organization.%0A%0ACompany%3A%20%0AName%3A%20%0ARole%3A%20%0ANumber%20of%20participants%3A%20%0A%0AThank%20you." class="pricing-btn pricing-btn-secondary">Request More Info</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════════════════
-       REGISTRATION FORM
-       ═══════════════════════════════════════════════════════ -->
-  <section class="registration" id="register">
-    <div class="container">
-      <div class="registration-header reveal">
-        <p class="section-label">Secure Your Place</p>
-        <h2 class="section-title">Register for The Human Advantage</h2>
-        <div class="divider" style="margin: 24px auto;"></div>
-        <p class="section-desc">Complete the form below and our executive programs team will contact you within 24 business hours to confirm your enrollment.</p>
-      </div>
-      <div class="form-wrapper reveal">
-        <form id="registrationForm" novalidate>
-          <div class="form-error-banner" id="formErrorBanner">There was an error submitting your registration. Please try again.</div>
-          <div class="form-group">
-            <label class="form-label" for="fullName">Full Name <span class="required">*</span></label>
-            <input type="text" id="fullName" name="fullName" class="form-input" placeholder="First name(s)" required>
-            <div class="form-error" id="fullNameError">Please enter your full name.</div>
-          </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label class="form-label" for="surnamePaterno">Surname Paterno <span class="required">*</span></label>
-              <input type="text" id="surnamePaterno" name="surnamePaterno" class="form-input" placeholder="Apellido paterno" required>
-              <div class="form-error" id="surnamePaternoError">Please enter your paternal surname.</div>
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="lastNameMaterno">Last Name Materno <span class="required">*</span></label>
-              <input type="text" id="lastNameMaterno" name="lastNameMaterno" class="form-input" placeholder="Apellido materno" required>
-              <div class="form-error" id="lastNameMaternoError">Please enter your maternal last name.</div>
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label class="form-label" for="title">Title / Position <span class="required">*</span></label>
-              <input type="text" id="title" name="title" class="form-input" placeholder="e.g., Chief Technology Officer" required>
-              <div class="form-error" id="titleError">Please enter your title or position.</div>
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="company">Company <span class="required">*</span></label>
-              <input type="text" id="company" name="company" class="form-input" placeholder="Organization name" required>
-              <div class="form-error" id="companyError">Please enter your company name.</div>
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="email">Business Email <span class="required">*</span></label>
-            <input type="email" id="email" name="email" class="form-input" placeholder="name@company.com" required>
-            <div class="form-error" id="emailError">Please enter a valid business email address.</div>
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="sector">Sector <span class="required">*</span></label>
-            <select id="sector" name="sector" class="form-select" required>
-              <option value="" disabled selected>Select your sector</option>
-              <option value="Corporativo">Corporativo</option>
-              <option value="Seguros">Seguros</option>
-              <option value="Broker Dealer">Broker Dealer</option>
-              <option value="Hedge Fund">Hedge Fund</option>
-              <option value="FCM">FCM</option>
-              <option value="Banking">Banking</option>
-              <option value="Pension">Pension</option>
-            </select>
-            <div class="form-error" id="sectorError">Please select your sector.</div>
-          </div>
-          <button type="submit" class="form-submit" id="submitBtn">Submit Registration</button>
-          <p class="form-disclaimer">By submitting this form, you agree to be contacted by RiskMathics Financial Innovation Lab regarding The Human Advantage program. Your information will be treated with strict confidentiality.</p>
-        </form>
-        <div class="form-success" id="formSuccess">
-          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
-          <h3>Registration Received</h3>
-          <p>Thank you for your interest in The Human Advantage. Our executive programs team will contact you within 24 business hours.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════════════════
-       FOOTER
-       ═══════════════════════════════════════════════════════ -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-inner">
-        <div class="footer-brand">
-          <div class="footer-brand-name">RiskMathics <span>Financial Innovation Lab</span></div>
-          <p>Empowering executives to lead with clarity, empathy, and strategic intelligence in the age of artificial intelligence. The Human Advantage is a flagship program of the RiskMathics ecosystem.</p>
-        </div>
-        <div class="footer-contact">
-          <div class="footer-contact-label">Executive Programs</div>
-          <a href="mailto:executive@riskmathics.com">executive@riskmathics.com</a>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <div class="footer-copy">&copy; 2026 RiskMathics Financial Innovation Lab. All rights reserved.</div>
-        <div class="footer-links">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Service</a>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <!-- ═══════════════════════════════════════════════════════
-       JAVASCRIPT
-       ═══════════════════════════════════════════════════════ -->
-  <script>
-    /* ─── Navigation Scroll Effect ─── */
-    const nav = document.getElementById('nav');
-    let lastScroll = 0;
-
-    window.addEventListener('scroll', () => {
-      const currentScroll = window.pageYOffset;
-      if (currentScroll > 60) {
-        nav.classList.add('scrolled');
-      } else {
-        nav.classList.remove('scrolled');
-      }
-      lastScroll = currentScroll;
-    });
-
-    /* ─── Scroll Reveal ─── */
-    const revealElements = document.querySelectorAll('.reveal');
-
-    const revealObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          revealObserver.unobserve(entry.target);
-        }
-      });
-    }, {
-      threshold: 0.1,
-      rootMargin: '0px 0px -40px 0px'
-    });
-
-    revealElements.forEach(el => revealObserver.observe(el));
-
-    /* ─── Smooth Scroll for Anchor Links ─── */
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          const offset = 80;
-          const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
-          window.scrollTo({ top, behavior: 'smooth' });
-        }
-      });
-    });
-
-    /* ─── Form Validation ─── */
-    const form = document.getElementById('registrationForm');
-    const formSuccess = document.getElementById('formSuccess');
-
-    // Free email domains to reject
-    const freeEmailDomains = [
-      'gmail.com', 'googlemail.com',
-      'outlook.com', 'outlook.es', 'outlook.com.mx',
-      'hotmail.com', 'hotmail.es', 'hotmail.com.mx',
-      'live.com', 'live.com.mx',
-      'yahoo.com', 'yahoo.com.mx', 'yahoo.es',
-      'aol.com',
-      'icloud.com', 'me.com', 'mac.com',
-      'protonmail.com', 'proton.me',
-      'mail.com', 'gmx.com', 'gmx.net',
-      'ymail.com', 'rocketmail.com',
-      'zoho.com', 'zohomail.com'
-    ];
-
-    function isBusinessEmail(email) {
-      const domain = email.split('@')[1];
-      if (!domain) return false;
-      return !freeEmailDomains.includes(domain.toLowerCase());
-    }
-
-    function validateField(field, errorId, validationFn) {
-      const error = document.getElementById(errorId);
-      const value = field.value.trim();
-      let isValid;
-
-      if (validationFn) {
-        isValid = validationFn(value);
-      } else {
-        isValid = value.length > 0;
-      }
-
-      if (!isValid) {
-        field.classList.add('error');
-        error.classList.add('visible');
-      } else {
-        field.classList.remove('error');
-        error.classList.remove('visible');
-      }
-
-      return isValid;
-    }
-
-    // Real-time validation on blur
-    const fields = [
-      { id: 'fullName', errorId: 'fullNameError' },
-      { id: 'surnamePaterno', errorId: 'surnamePaternoError' },
-      { id: 'lastNameMaterno', errorId: 'lastNameMaternoError' },
-      { id: 'title', errorId: 'titleError' },
-      { id: 'company', errorId: 'companyError' },
-      { id: 'sector', errorId: 'sectorError' }
-    ];
-
-    fields.forEach(({ id, errorId }) => {
-      const field = document.getElementById(id);
-      field.addEventListener('blur', () => validateField(field, errorId));
-      field.addEventListener('input', () => {
-        if (field.classList.contains('error')) {
-          validateField(field, errorId);
-        }
-      });
-    });
-
-    // Email field — special validation
-    const emailField = document.getElementById('email');
-    const emailError = document.getElementById('emailError');
-
-    emailField.addEventListener('blur', () => {
-      const value = emailField.value.trim();
-      if (!value) {
-        emailField.classList.add('error');
-        emailError.textContent = 'Please enter your business email address.';
-        emailError.classList.add('visible');
-      } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
-        emailField.classList.add('error');
-        emailError.textContent = 'Please enter a valid email address.';
-        emailError.classList.add('visible');
-      } else if (!isBusinessEmail(value)) {
-        emailField.classList.add('error');
-        emailError.textContent = 'Please use your corporate email. Personal email addresses (Gmail, Outlook, Yahoo, etc.) are not accepted.';
-        emailError.classList.add('visible');
-      } else {
-        emailField.classList.remove('error');
-        emailError.classList.remove('visible');
-      }
-    });
-
-    emailField.addEventListener('input', () => {
-      if (emailField.classList.contains('error')) {
-        const value = emailField.value.trim();
-        if (value && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value) && isBusinessEmail(value)) {
-          emailField.classList.remove('error');
-          emailError.classList.remove('visible');
-        }
-      }
-    });
-
-    // n8n Webhook endpoint
-    const WEBHOOK_URL = 'https://allanbarush.app.n8n.cloud/webhook/landing-page-lead';
-    const submitBtn = document.getElementById('submitBtn');
-    const formErrorBanner = document.getElementById('formErrorBanner');
-
-    // Form submission
-    form.addEventListener('submit', async function(e) {
-      e.preventDefault();
-
-      // Hide any previous error banner
-      formErrorBanner.classList.remove('visible');
-
-      let isValid = true;
-
-      // Validate all required fields
-      fields.forEach(({ id, errorId }) => {
-        const field = document.getElementById(id);
-        if (!validateField(field, errorId)) {
-          isValid = false;
-        }
-      });
-
-      // Validate email
-      const emailValue = emailField.value.trim();
-      if (!emailValue) {
-        emailField.classList.add('error');
-        emailError.textContent = 'Please enter your business email address.';
-        emailError.classList.add('visible');
-        isValid = false;
-      } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailValue)) {
-        emailField.classList.add('error');
-        emailError.textContent = 'Please enter a valid email address.';
-        emailError.classList.add('visible');
-        isValid = false;
-      } else if (!isBusinessEmail(emailValue)) {
-        emailField.classList.add('error');
-        emailError.textContent = 'Please use your corporate email. Personal email addresses (Gmail, Outlook, Yahoo, etc.) are not accepted.';
-        emailError.classList.add('visible');
-        isValid = false;
-      }
-
-      if (!isValid) {
-        const firstError = form.querySelector('.form-input.error, .form-select.error');
-        if (firstError) {
-          firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
-          firstError.focus();
-        }
-        return;
-      }
-
-      // Build JSON payload
-      const payload = {
-        name: document.getElementById('fullName').value.trim(),
-        surname_paterno: document.getElementById('surnamePaterno').value.trim(),
-        surname_materno: document.getElementById('lastNameMaterno').value.trim(),
-        title: document.getElementById('title').value.trim(),
-        company: document.getElementById('company').value.trim(),
-        email: emailValue,
-        sector: document.getElementById('sector').value,
-        program: 'The Human Advantage',
-        source: 'landing_page',
-        timestamp: new Date().toISOString()
-      };
-
-      // Disable button and show loading state
-      submitBtn.disabled = true;
-      submitBtn.innerHTML = '<span class="spinner"></span>Submitting...';
-
-      try {
-        const response = await fetch(WEBHOOK_URL, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(payload)
-        });
-
-        if (response.ok || response.status === 200 || response.status === 201 || response.status === 204) {
-          // Success — show confirmation
-          form.style.display = 'none';
-          formSuccess.classList.add('visible');
-          formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        } else {
-          throw new Error('Server responded with status: ' + response.status);
-        }
-      } catch (error) {
-        console.error('Webhook submission error:', error);
-        // Show error banner but still show success to not block the user
-        // The data can be retried or captured via analytics
-        form.style.display = 'none';
-        formSuccess.classList.add('visible');
-        formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
-
-        // Also attempt a no-cors fallback in case of CORS issues
-        try {
-          await fetch(WEBHOOK_URL, {
-            method: 'POST',
-            mode: 'no-cors',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(payload)
-          });
-        } catch (fallbackError) {
-          console.error('Fallback submission also failed:', fallbackError);
-        }
-      } finally {
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = 'Submit Registration';
-      }
-    });
-  </script>
-
-</body>
-</html>
-Marketing Package for "The Human Advantage" Executive Program - Manus
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Human Advantage: Design Thinking, AI Strategy &amp; Organizational Reinvention | RiskMathics</title>
+<meta name="description" content="The Human Advantage: Design Thinking, AI Strategy &amp; Organizational Reinvention. Understand Humans. Redesign Systems. Reinvent Organizations.. 10 sesiones, inicia 19 Oct 2026. Presencial · Club de Industriales, CDMX · 18:30 a 21:30 h. MXN $65,000 + TAX. RiskMathics Financial Institute.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0B1B2B;--bg2:#000003;--ink:#EAE4DA;--soft:#A79E8F;--acc:#00C2A8;--deep:#0E6B7A;--title:#F8F4EC;--card:#192939;--rule:rgba(0,194,168,0.16);--glow:rgba(14,107,122,0.33)}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{background:var(--bg2);color:var(--ink);font-family:'Lora',Georgia,serif;font-size:17px;line-height:1.75}
+h1,h2,h3{font-family:'Poppins',Arial,sans-serif}
+.wrap{max-width:960px;margin:0 auto;padding:0 24px}
+.kicker{font-family:'Poppins',Arial,sans-serif;font-size:11px;letter-spacing:3.2px;text-transform:uppercase;color:var(--acc);font-weight:600}
+.hero{min-height:72vh;display:flex;flex-direction:column;justify-content:center;padding:96px 24px 72px;text-align:center;background:radial-gradient(1000px 560px at 50% 28%,rgba(14,107,122,0.33),transparent),linear-gradient(165deg,#0B1B2B,#000003)}
+.hero .serie{font-family:'Poppins',Arial,sans-serif;font-size:11.5px;letter-spacing:4.5px;text-transform:uppercase;color:var(--acc);font-weight:600}
+.hero h1{font-size:clamp(30px,5.6vw,58px);font-weight:800;color:var(--title);line-height:1.06;letter-spacing:-.5px;margin:20px auto 0;max-width:20ch}
+.hero .subt{font-family:'Poppins',Arial,sans-serif;font-size:clamp(14px,2vw,19px);color:var(--acc);margin-top:13px;font-weight:500}
+.hero .aud{font-style:italic;color:var(--soft);font-size:14.5px;margin-top:10px}
+.hero .rule{width:64px;height:2px;background:var(--acc);margin:24px auto 0}
+.chips{display:flex;flex-wrap:wrap;gap:9px;justify-content:center;margin:28px auto 0}
+.chip{font-family:'Poppins',Arial,sans-serif;font-size:11.5px;letter-spacing:1px;text-transform:uppercase;border:1px solid var(--rule);background:rgba(255,255,255,.04);color:var(--ink);padding:8px 15px;border-radius:30px;font-weight:600}
+.hero-ctas{display:flex;gap:13px;justify-content:center;margin-top:30px;flex-wrap:wrap}
+.btn{font-family:'Poppins',Arial,sans-serif;font-size:12.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;padding:15px 32px;border-radius:4px;display:inline-block}
+.btn-primary{background:var(--deep);color:#FFFFFF}.btn-primary:hover{background:var(--acc);color:#140306}
+.btn-ghost{border:1.5px solid rgba(255,255,255,.3);color:var(--ink)}.btn-ghost:hover{background:rgba(255,255,255,.06)}
+.sec{padding:66px 0;border-top:1px solid var(--rule)}
+.sec-title{font-size:clamp(24px,3.2vw,34px);font-weight:800;color:var(--title);line-height:1.15;margin:12px 0 8px}
+.sec-sub{font-style:italic;color:var(--soft);font-size:17px;max-width:740px}
+ol.temas{list-style:none;margin-top:28px;counter-reset:tema}
+ol.temas>li{padding:17px 0 17px 52px;position:relative;border-bottom:1px solid var(--rule);font-size:16px;counter-increment:tema}
+ol.temas>li::before{content:counter(tema,decimal-leading-zero);position:absolute;left:0;top:19px;font-family:'Poppins',Arial,sans-serif;font-weight:700;font-size:15px;color:var(--acc)}
+ol.temas b{color:var(--title);font-family:'Poppins',Arial,sans-serif;font-weight:600;font-size:15.5px}
+ul.sub{list-style:none;margin-top:10px}
+ul.sub li{padding:6px 0 6px 22px;position:relative;font-size:15px;color:var(--ink)}
+ul.sub li::before{content:"";position:absolute;left:2px;top:15px;width:7px;height:7px;background:var(--acc);border-radius:50%}
+.parte{margin-top:34px;border:1px solid var(--rule);background:var(--card);padding:30px 32px}
+.parte .pt{font-family:'Poppins',Arial,sans-serif;font-weight:700;color:var(--title);font-size:18px}
+.parte .pm{font-family:'Poppins',Arial,sans-serif;font-size:11.5px;letter-spacing:1.6px;text-transform:uppercase;color:var(--acc);margin-top:6px;font-weight:600}
+.quote{font-family:'Lora',Georgia,serif;font-style:italic;font-size:clamp(20px,3vw,28px);color:var(--title);text-align:center;max-width:620px;margin:0 auto;line-height:1.4}
+.quote small{display:block;font-style:normal;font-family:'Poppins',Arial,sans-serif;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--acc);margin-top:16px}
+.fac{display:grid;grid-template-columns:1fr;gap:22px;margin-top:30px}
+.fc{border:1px solid var(--rule);background:var(--card);padding:28px 30px}
+.fc .fn{font-family:'Poppins',Arial,sans-serif;font-weight:700;color:var(--title);font-size:18px}
+.fc .fr{font-family:'Poppins',Arial,sans-serif;font-size:12px;letter-spacing:1.4px;text-transform:uppercase;color:var(--acc);margin:6px 0 12px;font-weight:600}
+.fc p{font-size:15px;color:var(--ink)}
+.fechas{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.fd{font-family:'Poppins',Arial,sans-serif;border:1px solid var(--rule);background:var(--card);padding:14px 20px;text-align:center;min-width:96px}
+.fd .d{font-size:20px;font-weight:800;color:var(--acc)}
+.fd .m{font-size:10px;letter-spacing:1.6px;text-transform:uppercase;color:var(--soft);margin-top:4px}
+.ficha{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);margin-top:30px}
+.f{background:var(--card);padding:22px 14px;text-align:center}
+.f .n{font-family:'Poppins',Arial,sans-serif;font-size:19px;font-weight:800;color:var(--acc)}
+.f .l{font-family:'Poppins',Arial,sans-serif;font-size:10px;letter-spacing:1.4px;text-transform:uppercase;color:var(--soft);margin-top:7px}
+@media(max-width:700px){.ficha{grid-template-columns:repeat(2,1fr)}}
+footer{background:var(--bg2);color:var(--soft);padding:36px 24px;text-align:center;font-family:'Poppins',Arial,sans-serif;font-size:12px;line-height:2;border-top:1px solid var(--rule)}
+footer a{color:var(--acc);text-decoration:none}
+.tgl{font-family:'Lora',Georgia,serif;font-style:italic;color:var(--acc);font-size:15.5px;margin-top:12px}
+ol.temas .tg{display:block;font-family:'Lora',Georgia,serif;font-style:italic;color:var(--acc);font-size:14px;margin-top:9px}
+.abs p{font-size:16.5px;margin-top:18px;color:var(--ink)}.abs p b{color:var(--title)}
+.hl{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:30px}.hl .h{border:1px solid var(--rule);background:var(--card);padding:18px 20px}.hl .h b{font-family:'Poppins',Arial,sans-serif;color:var(--acc);font-weight:700;font-size:13px;display:block;margin-bottom:6px}.hl .h span{font-size:14.5px;color:var(--ink)}@media(max-width:700px){.hl{grid-template-columns:1fr}}
+ul.dir{list-style:none;margin-top:24px}ul.dir li{padding:10px 0 10px 26px;position:relative;font-size:15.5px;border-bottom:1px solid var(--rule)}ul.dir li::before{content:"";position:absolute;left:2px;top:19px;width:8px;height:8px;background:var(--acc);border-radius:50%}
+</style></head><body>
+<header class="hero">
+ <div class="serie">RiskMathics AI Academy · Executive AI Leadership Series · Programa II — REINVENT</div>
+ <h1>The Human Advantage: Design Thinking, AI Strategy &amp; Organizational Reinvention</h1>
+ <div class="subt">Understand Humans. Redesign Systems. Reinvent Organizations.</div>
+ <div class="aud">Directores generales, C-Level, Consejo, Transformación, Tecnología y Operaciones</div>
+ <div class="rule"></div>
+ <div class="chips">
+  <span class="chip">10 sesiones · 30 horas</span>
+  <span class="chip">Inicia 19 Oct 2026</span>
+  <span class="chip">Presencial · Club de Industriales, CDMX · 18:30 a 21:30 h</span>
+  <span class="chip">MXN $65,000 + TAX</span>
+ </div>
+ <div class="hero-ctas"><a class="btn btn-primary" href="#rm-enroll">Inscr&iacute;bete</a><a class="btn btn-ghost" href="#temario">Ver temario</a></div>
+</header>
+
+<section class="sec"><div class="wrap">
+ <p class="quote">&ldquo;Learn. Apply. Profit.&rdquo;<small>RiskMathics Financial Institute</small></p>
+</div></section>
+<section class="sec"><div class="wrap abs">
+ <div class="kicker">El programa</div><h2 class="sec-title">De qu&eacute; va.</h2>
+<p>La reinvención es la nueva ventaja competitiva. Las organizaciones que sobrevivirán a la era de la IA no son las que compran más herramientas, sino las que rediseñan cómo entienden a las personas, cómo estructuran sus sistemas y cómo toman decisiones.</p><p>Este programa integra Design Thinking, pensamiento sistémico, diseño conductual y estrategia de IA en un solo método ejecutivo. Los participantes no acumulan herramientas aisladas: construyen una tesis de reinvención coherente, un diseño de estado futuro, una ruta de ejecución y una narrativa para el Consejo, hasta defenderla ante un comité a nivel directivo.</p><p>Es el Programa II de la Executive AI Leadership Series, y funciona tanto en secuencia con Human Factor Leadership como de manera independiente.</p><p><b>Objetivo:</b> Formar líderes capaces de rediseñar el sistema de trabajo desde la perspectiva de empleados, clientes y managers; construir una estrategia de IA que responda al negocio y no a la moda tecnológica; y traducir esa reinvención en una ruta de ejecución con propiedad, métricas y narrativa defendible ante el Consejo.</p>
+</div></section>
+<section class="sec"><div class="wrap">
+ <div class="kicker">Highlights</div><h2 class="sec-title">10 razones para tomarlo.</h2>
+ <div class="hl"><div class="h"><b>01</b><span>Programa presencial en el Club de Industriales, CDMX: 10 sesiones de 3 horas, lunes, martes y jueves.</span></div><div class="h"><b>02</b><span>Entregable final: The Human Advantage Framework™, defendido ante un comité a nivel Consejo.</span></div><div class="h"><b>03</b><span>Design Thinking aplicado a decisiones ejecutivas, no a talleres de post-its.</span></div><div class="h"><b>04</b><span>Systems Thinking: leer la complejidad organizacional y sus efectos de segundo orden.</span></div><div class="h"><b>05</b><span>Behavioral Design: arquitectura de decisión humana dentro de sistemas asistidos por IA.</span></div><div class="h"><b>06</b><span>AI Strategy: construir una tesis de reinvención del negocio, no un catálogo de pilotos.</span></div><div class="h"><b>07</b><span>Rediseño del sistema de trabajo desde la perspectiva de empleados, clientes y managers.</span></div><div class="h"><b>08</b><span>Ruta de ejecución con propiedad clara, cadencia de decisión y métricas de valor.</span></div><div class="h"><b>09</b><span>Narrativa de transformación lista para Consejo, empleados y stakeholders.</span></div><div class="h"><b>10</b><span>Arquitectura: 25% frameworks ejecutivos · 20% casos y debate · 35% studios y labs · 20% capstone y defensa.</span></div></div>
+</div></section>
+<section class="sec"><div class="wrap">
+ <div class="kicker">Dirigido a</div><h2 class="sec-title">Para qui&eacute;n es.</h2>
+ <ul class="dir"><li>Directores generales, C-Level y miembros de Consejo</li><li>Directores de Recursos Humanos, Talento y Transformación</li><li>CIO, CTO y líderes de Tecnología y Datos</li><li>Directores de Riesgos, Finanzas y Operaciones</li><li>Managers y directores que conducen equipos en transición hacia la IA</li></ul>
+</div></section>
+
+<section class="sec" id="temario"><div class="wrap">
+ <div class="kicker">Temario</div><h2 class="sec-title">Qu&eacute; vas a dominar.</h2>
+ <p class="sec-sub">Diez sesiones presenciales, del 19 de octubre al 10 de noviembre de 2026.</p>
+ <ol class="temas">
+  <li><b>The Reinvention Imperative</b> Por qué la reinvención sustituye a la mejora continua como ventaja competitiva.</li>
+  <li><b>Design Thinking for Executive Decision Makers</b> El método de diseño aplicado a decisiones de dirección, no a talleres.</li>
+  <li><b>Systems Thinking &amp; Organizational Complexity</b> Leer la organización como sistema: interdependencias y efectos de segundo orden.</li>
+  <li><b>Behavioral Design &amp; Human Decision Architecture</b> Cómo deciden las personas dentro de sistemas asistidos por inteligencia artificial.</li>
+  <li><b>AI Strategy &amp; Business Reinvention</b> De pilotos aislados a una tesis de reinvención del modelo de negocio.</li>
+  <li><b>Rediseño del sistema de trabajo</b> Empleados, clientes y managers como perspectivas de diseño del estado futuro.</li>
+  <li><b>Arquitectura del estado futuro</b> Estructura, derechos de decisión, capacidades y tecnología alineados.</li>
+  <li><b>Ruta de ejecución</b> Propiedad, cadencia, métricas financieras y operativas del cambio.</li>
+  <li><b>Narrativa de transformación</b> Contar la reinvención al Consejo, a los empleados y al mercado.</li>
+  <li><b>Capstone y defensa</b> Defensa de The Human Advantage Framework™ ante un comité a nivel Consejo.</li>
+ </ol>
+</div></section>
+<section class="sec"><div class="wrap">
+ <div class="kicker">Faculty</div><h2 class="sec-title">Qui&eacute;nes lo imparten.</h2>
+ <div class="fac"><div class="fc"><div class="fn">Jorge Pérez Colín</div><div class="fr">Socio Director · BDS Business Data Scientists</div><p>Jorge Pérez Colín — Socio Director de BDS · Business Data Scientists. Fue Director de Analytics para Accenture (2015-2019) y Partner de IBM México, donde lideró Cognitive Business Decision Services. CIO del IPADE Business School durante trece años, donde impartió Entorno Económico y Tecnologías de Información. Profesor visitante en el IPADE y profesor en la Maestría de Ciencia de Datos del ITAM. Los nombres del faculty completo y la asignación final de sesiones se anuncian antes del inicio.</p></div></div>
+</div></section>
+
+<section class="sec"><div class="wrap">
+ <div class="kicker">El programa</div><h2 class="sec-title">Ficha del programa.</h2>
+ <p class="sec-sub">Regístrate y recibe el temario completo por correo; un asesor te contacta el mismo día.</p>
+ <div class="ficha">
+  <div class="f"><div class="n">10</div><div class="l">Sesiones</div></div>
+  <div class="f"><div class="n">30</div><div class="l">Horas totales</div></div>
+  <div class="f"><div class="n">19 Oct</div><div class="l">Inicio</div></div>
+  <div class="f"><div class="n">MXN $65,000 + TAX</div><div class="l">Inversi&oacute;n</div></div>
+ </div>
+</div></section>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/css/intlTelInput.css">
+<style>
+ #rm-enroll .iti{width:100%;}
+ #rm-enroll .iti__selected-flag{background:transparent;padding-left:0;}
+ #rm-enroll input,#rm-enroll select{outline:none;background:transparent;}
+ #rm-enroll .rm-in{width:100%;border:none;border-bottom:1px solid #dfe5ee;border-radius:0;padding:9px 1px 10px;font-size:15px;font-family:'Lora',Georgia,serif;color:#1b2430;transition:border-color .18s;}
+ #rm-enroll .rm-in:focus{border-bottom-color:#8f9bb0;}
+ #rm-enroll .rm-in::placeholder{color:#b7c0cd;}
+ #rm-enroll .rm-lb{display:block;font-family:'Poppins',Arial,sans-serif;font-size:10px;letter-spacing:1.6px;font-weight:500;color:#93A0B4;text-transform:uppercase;margin-bottom:2px;}
+ #rm-enroll select.rm-in{appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%2393A0B4' stroke-width='1.4' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 4px center;padding-right:20px;}
+ @media (max-width:560px){#rm-enroll .rm-2col{grid-template-columns:1fr !important;}}
+</style>
+<section id="rm-enroll" style="background:linear-gradient(150deg,#0B1B2B,#000003);color:#fff;padding:88px 22px;font-family:'Poppins',Arial,sans-serif;">
+ <div style="max-width:600px;margin:0 auto;">
+ <div style="text-align:center;margin-bottom:38px;">
+ <div style="color:#00C2A8;letter-spacing:3px;font-size:10.5px;font-weight:500;">INSCRIPCIÓN · CUPO LIMITADO</div>
+ <h2 style="font-size:26px;margin:16px 0 0;font-weight:600;line-height:1.25;letter-spacing:.3px;">Asegura tu lugar</h2>
+ <div style="width:50px;height:2px;background:#00C2A8;margin:18px auto;"></div>
+ <p style="color:#c2cee0;font-size:15px;margin:0;font-family:'Lora',Georgia,serif;font-style:italic;">Déjanos tus datos y verifica tu correo,<br>y recibe el temario completo. Sin compromiso.</p>
+ </div>
+ <div style="background:#ffffff;color:#1b2430;border-radius:6px;padding:44px 42px;border:1px solid rgba(255,255,255,.14);box-shadow:0 2px 24px rgba(0,0,0,.16);">
+ <form id="rm-lead" onsubmit="return rmSubmit(event)" style="display:grid;gap:22px;">
+ <div><label class="rm-lb">Nombre(s)</label><input class="rm-in" name="nombre" required></div>
+ <div class="rm-2col" style="display:grid;grid-template-columns:1fr 1fr;gap:22px 20px;">
+ <div><label class="rm-lb">Apellido paterno</label><input class="rm-in" name="apellido_paterno" required></div>
+ <div><label class="rm-lb">Apellido materno</label><input class="rm-in" name="apellido_materno"></div>
+ </div>
+ <div><label class="rm-lb">Tipo de registro</label>
+ <select class="rm-in" name="tipo_interes" required onchange="var individual=this.value==='individual',form=this.form;['puesto','empresa','sector'].forEach(function(name){var field=form.elements[name];if(field)field.required=!individual;});">
+ <option value="" disabled selected></option>
+ <option value="individual">Inscripción individual</option>
+ <option value="grupo">Grupo o delegación</option>
+ <option value="licencia_corporativa">Licencia / cohorte corporativa</option>
+ </select>
+ <small style="display:block;margin-top:7px;color:#93A0B4;font-family:'Lora',Georgia,serif;font-size:11.5px;">Para inscripción individual, empresa, puesto y sector son opcionales.</small>
+ </div>
+ <div><label class="rm-lb">Email corporativo o institucional</label><input class="rm-in" type="email" name="email" required></div>
+ <div class="rm-2col" style="display:grid;grid-template-columns:1fr 1fr;gap:22px 20px;">
+ <div><label class="rm-lb">Puesto</label><input class="rm-in" name="puesto" required></div>
+ <div><label class="rm-lb">Institución / Empresa</label><input class="rm-in" name="empresa" required></div>
+ </div>
+ <div><label class="rm-lb">Sector financiero / industria</label>
+ <select class="rm-in" name="sector" required>
+ <option value="" disabled selected></option>
+ <option>AFORE / Fondos de Pensión</option>
+ <option>Aseguradora / Insurance</option>
+ <option>Banca</option>
+ <option>Casa de Bolsa / Broker Dealer</option>
+ <option>Asset Manager</option>
+ <option>Hedge Fund</option>
+ <option>Family Office</option>
+ <option>Corporativo</option>
+ <option>PyME</option>
+ <option>Gobierno</option>
+ <option>Energía</option>
+ <option>Otro</option>
+ </select>
+ </div>
+ <div class="rm-2col" style="display:grid;grid-template-columns:1fr 1fr;gap:22px 20px;">
+ <div><label class="rm-lb">País</label>
+ <select class="rm-in" name="pais" required>
+ <option value="" disabled data-iso=""></option>
+ <option data-iso="mx" selected>México</option>
+ <option data-iso="us">Estados Unidos</option>
+ <option data-iso="es">España</option>
+ <option data-iso="co">Colombia</option>
+ <option data-iso="pe">Perú</option>
+ <option data-iso="cl">Chile</option>
+ <option data-iso="ar">Argentina</option>
+ <option data-iso="ec">Ecuador</option>
+ <option data-iso="gt">Guatemala</option>
+ <option data-iso="pa">Panamá</option>
+ <option data-iso="cr">Costa Rica</option>
+ <option data-iso="do">República Dominicana</option>
+ <option data-iso="bo">Bolivia</option>
+ <option data-iso="uy">Uruguay</option>
+ <option data-iso="py">Paraguay</option>
+ <option data-iso="ve">Venezuela</option>
+ <option data-iso="hn">Honduras</option>
+ <option data-iso="sv">El Salvador</option>
+ <option data-iso="ni">Nicaragua</option>
+ <option data-iso="br">Brasil</option>
+ <option data-iso="ca">Canadá</option>
+ <option data-iso="">Otro</option>
+ </select>
+ </div>
+ <div><label class="rm-lb">WhatsApp (opcional)</label><input class="rm-in" id="rm-whatsapp" name="whatsapp" type="tel"></div>
+ </div>
+ <label style="display:flex;align-items:flex-start;gap:10px;font-size:11.5px;color:#5a6577;font-family:'Lora',Georgia,serif;line-height:1.55;cursor:pointer;margin-top:2px;">
+ <input type="checkbox" name="privacidad" required style="margin-top:2px;width:14px;height:14px;flex:none;cursor:pointer;accent-color:#1b2430;">
+ <span>He leído y acepto el <a href="https://riskmathics.com/avisoprivacidad" target="_blank" rel="noopener" style="color:#1b2430;font-weight:600;text-decoration:underline;text-underline-offset:2px;">Aviso de Privacidad</a> y autorizo el tratamiento de mis datos y ser contactado por RiskMathics.</span>
+ </label>
+ <button type="submit" style="background:#0E6B7A;color:#ffffff;font-weight:600;font-size:13px;letter-spacing:1.8px;text-transform:uppercase;border:none;padding:17px;border-radius:4px;cursor:pointer;font-family:'Poppins',Arial,sans-serif;margin-top:4px;">Quiero el temario</button>
+ <p style="font-size:10.5px;color:#9aa4b4;margin:0;text-align:center;font-family:'Poppins',Arial,sans-serif;letter-spacing:.4px;">Te enviamos un código a tu correo · Datos protegidos</p>
+ </form>
+ <div id="rm-verify" style="display:none;"></div>
+ <div id="rm-thanks" style="display:none;border:1px solid #b7e4c7;background:#f6fdf9;color:#1b4332;padding:22px;border-radius:6px;font-size:14.5px;font-family:'Lora',Georgia,serif;line-height:1.6;"><b>Listo.</b> Recibimos y verificamos tu correo. Te enviamos el temario a tu correo y un asesor te contactará.</div>
+ <div style="margin-top:34px;padding-top:28px;border-top:1px solid #edf0f5;text-align:center;">
+ <div style="font-size:10px;color:#93A0B4;letter-spacing:2.2px;font-family:'Poppins',Arial,sans-serif;">O INSCRÍBETE Y PAGA DIRECTO</div>
+ <div style="font-size:30px;font-weight:300;color:#0E6B7A;margin:14px 0 2px;font-family:'Poppins',Arial,sans-serif;letter-spacing:.5px;">MXN $65,000 <span style="font-size:15px;font-weight:400;color:#9aa4b4;letter-spacing:.5px;">+ TAX</span></div>
+ <div style="font-size:11px;color:#9aa4b4;font-family:'Lora',Georgia,serif;font-style:italic;margin-bottom:18px;">MXN $65,000 · 10 sesiones · 30 horas</div>
+ <div style="display:grid;gap:10px;">
+ <a id="rm-paypal" href="https://bffdsgvgcvmojobfiuay.supabase.co/functions/v1/paypal-pay?curso=thehumanadvantage" target="_blank" rel="noopener" style="background:#0E6B7A;color:#ffffff;font-weight:600;font-size:12.5px;letter-spacing:1.6px;text-transform:uppercase;padding:15px;border-radius:4px;text-decoration:none;white-space:nowrap;font-family:'Poppins',Arial,sans-serif;">Pagar con PayPal</a>
+ <a id="rm-stripe" href="https://buy.stripe.com/cNibITeLRcT65stfrz2Rz3q" target="_blank" rel="noopener" style="background:transparent;border:1.5px solid #0E6B7A;color:#0E6B7A;font-weight:600;font-size:12.5px;letter-spacing:1.6px;text-transform:uppercase;padding:14px;border-radius:4px;text-decoration:none;white-space:nowrap;font-family:'Poppins',Arial,sans-serif;">Pagar con tarjeta · Stripe</a>
+ </div>
+ <p style="font-size:11px;color:#8fa2b8;margin-top:14px;font-family:'Lora',Georgia,serif;font-style:italic;">M&aacute;s de 100,000 profesionales formados en 25 a&ntilde;os &middot; BANXICO, CNBV, AFOREs y la banca de LATAM</p>
+<p style="font-size:10.5px;color:#9aa4b4;margin-top:6px;font-family:'Poppins',Arial,sans-serif;letter-spacing:.4px;">Meses sin intereses disponibles con PayPal</p>
+<p style="font-size:10px;color:#b3bcc9;margin-top:16px;font-family:'Poppins',Arial,sans-serif;letter-spacing:.5px;">100% seguro · SSL · PayPal Verified · RiskMathics Financial Institute</p>
+ </div>
+ </div>
+ </div>
+</section>
+<script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/intlTelInput.min.js"></script>
+<script>
+const RM_CFG={id:"thehumanadvantage",folleto:"",paypal:"https://bffdsgvgcvmojobfiuay.supabase.co/functions/v1/paypal-pay?curso=thehumanadvantage",stripe:"https://buy.stripe.com/cNibITeLRcT65stfrz2Rz3q"};
+const RM_VURL="https://bffdsgvgcvmojobfiuay.supabase.co/functions/v1/verify-lead";
+const RM_VKEY="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJmZmRzZ3ZnY3Ztb2pvYmZpdWF5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzUzOTQ0NzQsImV4cCI6MjA5MDk3MDQ3NH0.7VKn7st3POLRTLIXx9Y4gRjXbh8v_BKXblc7vFIVu-U";
+let RM_LEAD=null;var rmIti=null;
+(function(){var pp=document.getElementById('rm-paypal');if(pp&&!RM_CFG.paypal)pp.style.display='none';var sp=document.getElementById('rm-stripe');if(sp&&!RM_CFG.stripe)sp.style.display='none';
+var tel=document.getElementById('rm-whatsapp');var sel=document.querySelector('#rm-lead select[name=pais]');
+if(window.intlTelInput&&tel){rmIti=window.intlTelInput(tel,{initialCountry:"mx",preferredCountries:["mx","us","co","pe","cl","ar","es"],separateDialCode:true,utilsScript:"https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/utils.js"});
+if(sel){sel.addEventListener('change',function(){var o=sel.options[sel.selectedIndex];if(o&&o.dataset.iso&&rmIti)rmIti.setCountry(o.dataset.iso);});
+tel.addEventListener('countrychange',function(){if(!rmIti)return;var c=rmIti.getSelectedCountryData();for(var i=0;i<sel.options.length;i++){if((sel.options[i].dataset.iso||'')===c.iso2){sel.selectedIndex=i;break;}}});}}})();
+async function rmPost(p){const r=await fetch(RM_VURL,{method:"POST",headers:{"Content-Type":"application/json","apikey":RM_VKEY,"Authorization":"Bearer "+RM_VKEY},body:JSON.stringify(p)});return r.json();}
+async function rmSubmit(e){e.preventDefault();const f=e.target,d=Object.fromEntries(new FormData(f));
+if(!f.privacidad||!f.privacidad.checked){alert("Debes aceptar el Aviso de Privacidad para continuar.");return false;}
+var phone="";if(window.rmIti){try{phone=rmIti.getNumber()||"";}catch(_){phone="";}}
+if(!phone){phone=(d.whatsapp||"").trim().replace(/[\s\-()]/g,"");if(phone&&!phone.startsWith("+"))phone="+52"+phone.replace(/^0+/,"");}
+d.phone=phone;d.apellido=((d.apellido_paterno||"")+" "+(d.apellido_materno||"")).trim();
+var so=f.pais&&f.pais.options[f.pais.selectedIndex];d.pais=(so&&so.text)||d.pais||"";d.pais_iso=((so&&so.dataset.iso)||"").toUpperCase();
+d.curso=RM_CFG.id;d.folleto=RM_CFG.folleto;d.privacidad=true;RM_LEAD=d;
+const b=f.querySelector('button[type=submit]');const txt=b.textContent;b.textContent="ENVIANDO CODIGO...";b.disabled=true;let res;
+try{res=await rmPost(Object.assign({action:"start"},d));}catch(_){res={};}
+if(res&&res.need_corporate){b.textContent=txt;b.disabled=false;rmCorporativo(res.contacto||{});return false;}
+if(res&&res.ok){f.style.display="none";rmShowCode(d.email);}
+else{b.textContent=txt;b.disabled=false;alert((res&&res.error)||"No pudimos enviar el codigo. Escribenos a growth@riskmathics.com");}
+return false;}
+function rmCorporativo(c){var box=document.getElementById('rm-verify');
+box.innerHTML='<div style="border:1px solid #f0d9a8;background:#fffaf0;padding:22px;border-radius:6px;">'+
+'<p style="margin:0 0 14px;font-size:15px;color:#1b2430;font-family:\'Lora\',Georgia,serif;line-height:1.6;">Para enviarte el temario necesitamos tu <b>correo institucional o de empresa</b>.</p>'+
+'<p style="margin:0 0 18px;font-size:14px;color:#5a6577;font-family:\'Lora\',Georgia,serif;line-height:1.6;">Si no cuentas con uno, escribenos y con gusto te atendemos:</p>'+
+'<div style="display:grid;gap:10px;">'+
+'<a href="'+(c.whatsapp||"https://wa.me/525579894034")+'" target="_blank" rel="noopener" style="background:#25D366;color:#fff;font-weight:600;font-size:13px;letter-spacing:1px;text-transform:uppercase;padding:14px;border-radius:4px;text-decoration:none;text-align:center;font-family:\'Poppins\',Arial,sans-serif;">Escribenos por WhatsApp</a>'+
+'<a href="tel:'+(c.telefono||"+525579894034").replace(/\s/g,"")+'" style="border:1.5px solid #1b2430;color:#1b2430;font-weight:600;font-size:13px;letter-spacing:1px;text-transform:uppercase;padding:13px;border-radius:4px;text-decoration:none;text-align:center;font-family:\'Poppins\',Arial,sans-serif;">Llamar '+(c.whatsapp_texto||"+52 55 7989 4034")+'</a>'+
+'<a href="mailto:'+(c.correo||"growth@riskmathics.com")+'?subject=Informes%20'+encodeURIComponent(RM_CFG.id)+'" style="border:1.5px solid #dfe5ee;color:#5a6577;font-weight:600;font-size:12.5px;letter-spacing:1px;text-transform:uppercase;padding:13px;border-radius:4px;text-decoration:none;text-align:center;font-family:\'Poppins\',Arial,sans-serif;">'+(c.correo||"growth@riskmathics.com")+'</a>'+
+'</div><p style="margin:16px 0 0;font-size:12px;color:#9aa4b4;font-family:\'Lora\',Georgia,serif;font-style:italic;text-align:center;">O corrige tu correo arriba e intenta de nuevo.</p></div>';
+box.style.display="block";box.scrollIntoView({behavior:"smooth",block:"center"});}
+function rmShowCode(email){var c=document.getElementById('rm-verify');
+c.innerHTML='<p style="margin:0 0 20px;font-size:14.5px;color:#1b2430;font-family:\'Lora\',Georgia,serif;line-height:1.6;">Te enviamos un <b>codigo</b> a <b>'+email+'</b>. Escribelo aqui para recibir tu temario:</p>'+
+'<div style="margin-bottom:24px;"><label style="display:block;font-family:\'Poppins\',Arial,sans-serif;font-size:10px;letter-spacing:1.6px;font-weight:500;color:#93A0B4;text-transform:uppercase;margin-bottom:4px;">Codigo de 6 digitos</label>'+
+'<input id="rm-otp-email" inputmode="numeric" maxlength="6" style="width:100%;border:none;border-bottom:1px solid #dfe5ee;padding:9px 1px 10px;font-size:22px;letter-spacing:8px;font-family:\'Poppins\',Arial,sans-serif;color:#1b2430;outline:none;"></div>'+
+'<button type="button" onclick="rmVerify()" style="width:100%;background:#0a1f3c;color:#ffffff;font-weight:600;font-size:13px;letter-spacing:1.8px;text-transform:uppercase;border:none;padding:16px;border-radius:4px;cursor:pointer;font-family:\'Poppins\',Arial,sans-serif;">Verificar y recibir temario</button>'+
+'<p id="rm-vmsg" style="font-size:11.5px;color:#9aa4b4;margin-top:10px;font-family:\'Lora\',Georgia,serif;"></p>'+
+'<p style="font-size:11.5px;color:#9aa4b4;margin-top:14px;font-family:\'Lora\',Georgia,serif;">No te llego? Revisa tu bandeja de no deseados o escribenos a <a href="mailto:growth@riskmathics.com" style="color:#0a1f3c;">growth@riskmathics.com</a></p>';
+c.style.display="block";var i=document.getElementById('rm-otp-email');if(i)i.focus();}
+async function rmVerify(){var ecode=(document.getElementById('rm-otp-email').value||"").trim();var m=document.getElementById('rm-vmsg');
+if(ecode.length<4){m.textContent="Escribe el codigo que te enviamos por correo.";return;}
+m.textContent="Verificando...";var res;
+try{res=await rmPost(Object.assign({action:"check",email_code:ecode},RM_LEAD,{action:"check",email_code:ecode}));}catch(_){res={};}
+if(res&&res.verified){document.getElementById('rm-verify').style.display="none";document.getElementById('rm-thanks').style.display="block";if(RM_CFG.folleto)window.open(RM_CFG.folleto,'_blank');}
+else{m.textContent=(res&&res.error)||"Codigo incorrecto o vencido. Intenta de nuevo.";}}
+</script>
+<!-- ===== /SALES MACHINE v3.2 ===== -->
+<script>(function(){var U="https://bffdsgvgcvmojobfiuay.supabase.co/functions/v1/rm-hit";function h(e){var d=JSON.stringify({slug:"thehumanadvantage",ev:e});try{navigator.sendBeacon(U,d)}catch(_){try{fetch(U,{method:"POST",body:d,keepalive:true})}catch(__){}}}h("view");document.addEventListener("click",function(ev){var a=ev.target&&ev.target.closest?ev.target.closest("a"):null;if(!a)return;var href=a.href||"";if(href.indexOf("buy.stripe.com")>=0)h("stripe");else if(href.indexOf("paypal-pay")>=0)h("paypal");},true);})();</script>
+<script async src="https://bffdsgvgcvmojobfiuay.supabase.co/functions/v1/rm-pixel"></script>
+
+<footer>RISKMATHICS FINANCIAL INSTITUTE<br>
+Informes: <a href="mailto:growth@riskmathics.com">growth@riskmathics.com</a> &middot; <a href="https://wa.me/525579894034" target="_blank" rel="noopener">WhatsApp +52 55 7989 4034</a><br>
+&copy; 2026 RiskMathics Financial Institute &middot; Learn. Apply. Profit.<span id="rm-social" style="display:block;margin-top:6px"><a href="https://www.linkedin.com/in/riskmathicsfi/" target="_blank" rel="noopener">LinkedIn</a> &middot; <a href="https://x.com/RiskMathicsFI" target="_blank" rel="noopener">X</a> &middot; <a href="https://www.youtube.com/@RiskMathicsFI" target="_blank" rel="noopener">YouTube</a> &middot; <a href="https://www.instagram.com/riskmathics_financial/" target="_blank" rel="noopener">Instagram</a> &middot; <a href="https://www.facebook.com/riskmathicsfi/" target="_blank" rel="noopener">Facebook</a> &middot; <a href="https://www.strava.com/clubs/955042" target="_blank" rel="noopener">Strava</a></span>
+</footer>
+<!--RM-CORNER-LOGO--><style>#rmcl{position:fixed;top:10px;left:14px;z-index:99998;line-height:0}#rmcl img{height:30px;width:auto;display:block;filter:drop-shadow(0 2px 6px rgba(0,0,0,.35))}@media(max-width:900px){#rmcl{display:none}}</style><a id="rmcl" href="https://riskmathics.com" target="_blank" rel="noopener" aria-label="RiskMathics"><img src="rm-logo.png" alt="RiskMathics"></a>
+</body></html>
